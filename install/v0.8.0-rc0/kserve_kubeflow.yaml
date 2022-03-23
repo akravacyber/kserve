@@ -7,9 +7,9 @@ metadata:
   labels:
     app: kserve
     app.kubernetes.io/name: kserve
-  name: clusterservingruntimes.serving.kserve.io
+  name: clusterservingruntimes.serving.kubeflow.org
 spec:
-  group: serving.kserve.io
+  group: serving.kubeflow.org
   names:
     kind: ClusterServingRuntime
     listKind: ClusterServingRuntimeList
@@ -721,7 +721,7 @@ metadata:
   labels:
     app: kserve
     app.kubernetes.io/name: kserve
-  name: inferenceservices.serving.kserve.io
+  name: inferenceservices.serving.kubeflow.org
 spec:
   conversion:
     strategy: Webhook
@@ -734,7 +734,7 @@ spec:
           path: /convert
       conversionReviewVersions:
       - v1beta1
-  group: serving.kserve.io
+  group: serving.kubeflow.org
   names:
     kind: InferenceService
     listKind: InferenceServiceList
@@ -13615,9 +13615,9 @@ metadata:
   labels:
     app: kserve
     app.kubernetes.io/name: kserve
-  name: servingruntimes.serving.kserve.io
+  name: servingruntimes.serving.kubeflow.org
 spec:
-  group: serving.kserve.io
+  group: serving.kubeflow.org
   names:
     kind: ServingRuntime
     listKind: ServingRuntimeList
@@ -14329,9 +14329,9 @@ metadata:
   labels:
     app: kserve
     app.kubernetes.io/name: kserve
-  name: trainedmodels.serving.kserve.io
+  name: trainedmodels.serving.kubeflow.org
 spec:
-  group: serving.kserve.io
+  group: serving.kubeflow.org
   names:
     kind: TrainedModel
     listKind: TrainedModelList
@@ -14656,7 +14656,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - clusterservingruntimes
   - clusterservingruntimes/finalizers
@@ -14669,7 +14669,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - clusterservingruntimes/status
   verbs:
@@ -14677,7 +14677,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - inferenceservices
   - inferenceservices/finalizers
@@ -14690,7 +14690,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - inferenceservices/status
   verbs:
@@ -14698,7 +14698,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - servingruntimes
   - servingruntimes/finalizers
@@ -14711,7 +14711,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - servingruntimes/status
   verbs:
@@ -14719,7 +14719,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - trainedmodels
   verbs:
@@ -14731,7 +14731,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - trainedmodels/status
   verbs:
@@ -14785,7 +14785,7 @@ metadata:
   name: kubeflow-kserve-edit
 rules:
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - inferenceservices
   verbs:
@@ -14828,7 +14828,7 @@ metadata:
   name: kubeflow-kserve-view
 rules:
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - inferenceservices
   verbs:
@@ -15275,7 +15275,7 @@ metadata:
   labels:
     app: kserve
     app.kubernetes.io/name: kserve
-  name: inferenceservice.serving.kserve.io
+  name: inferenceservice.serving.kubeflow.org
 webhooks:
 - admissionReviewVersions:
   - v1beta1
@@ -15289,7 +15289,7 @@ webhooks:
   name: inferenceservice.kserve-webhook-server.defaulter
   rules:
   - apiGroups:
-    - serving.kserve.io
+    - serving.kubeflow.org
     apiVersions:
     - v1beta1
     operations:
@@ -15314,7 +15314,7 @@ webhooks:
       operator: DoesNotExist
   objectSelector:
     matchExpressions:
-    - key: serving.kserve.io/inferenceservice
+    - key: serving.kubeflow.org/inferenceservice
       operator: Exists
   rules:
   - apiGroups:
@@ -15336,7 +15336,7 @@ metadata:
   labels:
     app: kserve
     app.kubernetes.io/name: kserve
-  name: inferenceservice.serving.kserve.io
+  name: inferenceservice.serving.kubeflow.org
 webhooks:
 - admissionReviewVersions:
   - v1beta1
@@ -15350,7 +15350,7 @@ webhooks:
   name: inferenceservice.kserve-webhook-server.validator
   rules:
   - apiGroups:
-    - serving.kserve.io
+    - serving.kubeflow.org
     apiVersions:
     - v1beta1
     operations:
@@ -15368,7 +15368,7 @@ metadata:
   labels:
     app: kserve
     app.kubernetes.io/name: kserve
-  name: trainedmodel.serving.kserve.io
+  name: trainedmodel.serving.kubeflow.org
 webhooks:
 - admissionReviewVersions:
   - v1beta1
@@ -15382,7 +15382,7 @@ webhooks:
   name: trainedmodel.kserve-webhook-server.validator
   rules:
   - apiGroups:
-    - serving.kserve.io
+    - serving.kubeflow.org
     apiVersions:
     - v1alpha1
     operations:
@@ -15392,7 +15392,7 @@ webhooks:
     - trainedmodels
   sideEffects: None
 ---
-apiVersion: serving.kserve.io/v1alpha1
+apiVersion: serving.kubeflow.org/v1alpha1
 kind: ClusterServingRuntime
 metadata:
   name: kserve-lgbserver
@@ -15417,7 +15417,7 @@ spec:
     name: lightgbm
     version: "2"
 ---
-apiVersion: serving.kserve.io/v1alpha1
+apiVersion: serving.kubeflow.org/v1alpha1
 kind: ClusterServingRuntime
 metadata:
   name: kserve-mlserver
@@ -15455,7 +15455,7 @@ spec:
   - name: mlflow
     version: "1"
 ---
-apiVersion: serving.kserve.io/v1alpha1
+apiVersion: serving.kubeflow.org/v1alpha1
 kind: ClusterServingRuntime
 metadata:
   name: kserve-paddleserver
@@ -15479,7 +15479,7 @@ spec:
     name: paddle
     version: "2"
 ---
-apiVersion: serving.kserve.io/v1alpha1
+apiVersion: serving.kubeflow.org/v1alpha1
 kind: ClusterServingRuntime
 metadata:
   name: kserve-pmmlserver
@@ -15506,7 +15506,7 @@ spec:
     name: pmml
     version: "4"
 ---
-apiVersion: serving.kserve.io/v1alpha1
+apiVersion: serving.kubeflow.org/v1alpha1
 kind: ClusterServingRuntime
 metadata:
   name: kserve-sklearnserver
@@ -15530,7 +15530,7 @@ spec:
     name: sklearn
     version: "1"
 ---
-apiVersion: serving.kserve.io/v1alpha1
+apiVersion: serving.kubeflow.org/v1alpha1
 kind: ClusterServingRuntime
 metadata:
   name: kserve-tensorflow-serving
@@ -15561,7 +15561,7 @@ spec:
     name: tensorflow
     version: "2"
 ---
-apiVersion: serving.kserve.io/v1alpha1
+apiVersion: serving.kubeflow.org/v1alpha1
 kind: ClusterServingRuntime
 metadata:
   name: kserve-torchserve
@@ -15589,7 +15589,7 @@ spec:
     name: pytorch
     version: "1"
 ---
-apiVersion: serving.kserve.io/v1alpha1
+apiVersion: serving.kubeflow.org/v1alpha1
 kind: ClusterServingRuntime
 metadata:
   name: kserve-tritonserver
@@ -15625,7 +15625,7 @@ spec:
   - name: triton
     version: "2"
 ---
-apiVersion: serving.kserve.io/v1alpha1
+apiVersion: serving.kubeflow.org/v1alpha1
 kind: ClusterServingRuntime
 metadata:
   name: kserve-xgbserver

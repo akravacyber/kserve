@@ -3,8 +3,8 @@
 ### Deploy InferenceService with Predictor
 KServe provides a simple Kubernetes CRD to allow deploying single or multiple trained models onto model servers such as [TFServing](https://www.tensorflow.org/tfx/guide/serving), 
 [TorchServe](https://pytorch.org/serve/server.html), [ONNXRuntime](https://github.com/microsoft/onnxruntime), [Triton Inference Server](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs).
-In addition [KFServer](https://github.com/kserve/kserve/tree/master/python/kserve) is the Python model server implemented in KServe itself prediction v1 protocol,
-[MLServer](https://github.com/SeldonIO/MLServer) implements the [prediction v2 protocol](https://github.com/kserve/kserve/tree/master/docs/predict-api/v2) with both REST and gRPC.
+In addition [KFServer](https://github.com/akravacyber/kserve/tree/master/python/kserve) is the Python model server implemented in KServe itself prediction v1 protocol,
+[MLServer](https://github.com/SeldonIO/MLServer) implements the [prediction v2 protocol](https://github.com/akravacyber/kserve/tree/master/docs/predict-api/v2) with both REST and gRPC.
 These model servers are able to provide out-of-the-box model serving, but you could also choose to build your own model server for more complex use case.
 KServe provides basic API primitives to allow you easily build custom model server, you can use other tools like [BentoML](https://docs.bentoml.org/en/latest) to build your custom model serve image.
 
@@ -31,9 +31,9 @@ After models are deployed onto model servers with KServe, you get all the follow
 | [ONNXRuntime](https://github.com/microsoft/onnxruntime)  | [Exported ONNX Model](https://github.com/onnx/tutorials#converting-to-onnx-format) | v1 | :heavy_check_mark: | :heavy_check_mark: | [Compatibility](https://github.com/microsoft/onnxruntime#compatibility) |[ONNX Style Model](./v1beta1/onnx)  |
 | [SKLearn MLServer](https://github.com/SeldonIO/MLServer) | [Pickled Model](https://scikit-learn.org/stable/modules/model_persistence.html) | v2 | :heavy_check_mark: | :heavy_check_mark: | 0.23.1 | [SKLearn Iris V2](./v1beta1/sklearn/v2)  |
 | [XGBoost MLServer](https://github.com/SeldonIO/MLServer) | [Saved Model](https://xgboost.readthedocs.io/en/latest/tutorials/saving_model.html) | v2 | :heavy_check_mark: | :heavy_check_mark: | 1.1.1 | [XGBoost Iris V2](./v1beta1/xgboost)  |
-| [SKLearn KFServer](https://github.com/kserve/kserve/tree/master/python/sklearnserver) | [Pickled Model](https://scikit-learn.org/stable/modules/model_persistence.html) | v1 | :heavy_check_mark: | -- | 0.20.3 | [SKLearn Iris](./v1beta1/sklearn/v1)  |
-| [PMML KFServer](https://github.com/kserve/kserve/tree/master/python/pmmlserver) | [PMML](http://dmg.org/pmml/v4-4-1/GeneralStructure.html) | v1 | :heavy_check_mark: | -- | [PMML4.4.1](https://github.com/autodeployai/pypmml) | [SKLearn PMML](./v1beta1/pmml)  |
-| [LightGBM KFServer](https://github.com/kserve/kserve/tree/master/python/lightgbm) | [Saved LightGBM Model](https://lightgbm.readthedocs.io/en/latest/pythonapi/lightgbm.Booster.html#lightgbm.Booster.save_model) | v1 | :heavy_check_mark: | -- | 2.3.1 | [LightGBM Iris](./v1beta1/lightgbm)  |
+| [SKLearn KFServer](https://github.com/akravacyber/kserve/tree/master/python/sklearnserver) | [Pickled Model](https://scikit-learn.org/stable/modules/model_persistence.html) | v1 | :heavy_check_mark: | -- | 0.20.3 | [SKLearn Iris](./v1beta1/sklearn/v1)  |
+| [PMML KFServer](https://github.com/akravacyber/kserve/tree/master/python/pmmlserver) | [PMML](http://dmg.org/pmml/v4-4-1/GeneralStructure.html) | v1 | :heavy_check_mark: | -- | [PMML4.4.1](https://github.com/autodeployai/pypmml) | [SKLearn PMML](./v1beta1/pmml)  |
+| [LightGBM KFServer](https://github.com/akravacyber/kserve/tree/master/python/lightgbm) | [Saved LightGBM Model](https://lightgbm.readthedocs.io/en/latest/pythonapi/lightgbm.Booster.html#lightgbm.Booster.save_model) | v1 | :heavy_check_mark: | -- | 2.3.1 | [LightGBM Iris](./v1beta1/lightgbm)  |
 
 | Custom Predictor  | Examples |
 | ------------- |  ------------- |

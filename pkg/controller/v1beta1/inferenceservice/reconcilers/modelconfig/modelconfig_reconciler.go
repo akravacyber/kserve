@@ -19,11 +19,11 @@ package multimodelconfig
 import (
 	"context"
 
-	v1beta1api "github.com/kserve/kserve/pkg/apis/serving/v1beta1"
-	"github.com/kserve/kserve/pkg/constants"
-	"github.com/kserve/kserve/pkg/controller/v1alpha1/trainedmodel/sharding/memory"
-	v1beta1utils "github.com/kserve/kserve/pkg/controller/v1beta1/inferenceservice/utils"
-	"github.com/kserve/kserve/pkg/modelconfig"
+	v1beta1api "github.com/akravacyber/kserve/pkg/apis/serving/v1beta1"
+	"github.com/akravacyber/kserve/pkg/constants"
+	"github.com/akravacyber/kserve/pkg/controller/v1alpha1/trainedmodel/sharding/memory"
+	v1beta1utils "github.com/akravacyber/kserve/pkg/controller/v1beta1/inferenceservice/utils"
+	"github.com/akravacyber/kserve/pkg/modelconfig"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"

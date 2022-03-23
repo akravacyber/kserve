@@ -9,9 +9,9 @@ import (
 	"errors"
 	"fmt"
 
+	"github.com/akravacyber/kserve/pkg/utils"
+	pb "github.com/akravacyber/kserve/tools/tf2openapi/generated/protobuf"
 	"github.com/getkin/kin-openapi/openapi3"
-	"github.com/kserve/kserve/pkg/utils"
-	pb "github.com/kserve/kserve/tools/tf2openapi/generated/protobuf"
 )
 
 type TFSignatureDef struct {

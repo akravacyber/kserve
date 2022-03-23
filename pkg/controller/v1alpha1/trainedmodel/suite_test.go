@@ -20,17 +20,17 @@ import (
 	"context"
 	"testing"
 
-	pkgtest "github.com/kserve/kserve/pkg/testing"
+	pkgtest "github.com/akravacyber/kserve/pkg/testing"
 	"k8s.io/client-go/tools/record"
 
-	"github.com/kserve/kserve/pkg/constants"
-	"github.com/kserve/kserve/pkg/controller/v1alpha1/trainedmodel/reconcilers/modelconfig"
+	"github.com/akravacyber/kserve/pkg/constants"
+	"github.com/akravacyber/kserve/pkg/controller/v1alpha1/trainedmodel/reconcilers/modelconfig"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	ctrl "sigs.k8s.io/controller-runtime"
 
-	kfservingv1alpha1 "github.com/kserve/kserve/pkg/apis/serving/v1alpha1"
-	kfservingv1beta1 "github.com/kserve/kserve/pkg/apis/serving/v1beta1"
+	kfservingv1alpha1 "github.com/akravacyber/kserve/pkg/apis/serving/v1alpha1"
+	kfservingv1beta1 "github.com/akravacyber/kserve/pkg/apis/serving/v1beta1"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

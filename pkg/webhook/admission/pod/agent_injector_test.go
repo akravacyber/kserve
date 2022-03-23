@@ -19,14 +19,14 @@ package pod
 import (
 	"testing"
 
-	"github.com/kserve/kserve/pkg/apis/serving/v1beta1"
-	"github.com/kserve/kserve/pkg/credentials"
+	"github.com/akravacyber/kserve/pkg/apis/serving/v1beta1"
+	"github.com/akravacyber/kserve/pkg/credentials"
 	"k8s.io/apimachinery/pkg/api/resource"
 	"k8s.io/apimachinery/pkg/util/intstr"
 
 	"knative.dev/pkg/kmp"
 
-	"github.com/kserve/kserve/pkg/constants"
+	"github.com/akravacyber/kserve/pkg/constants"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -82,10 +82,10 @@ func TestAgentInjector(t *testing.T) {
 						constants.AgentModelConfigMountPathAnnotationKey:  "/mnt/configs",
 					},
 					Labels: map[string]string{
-						"serving.kserve.io/inferenceservice": "sklearn",
-						constants.KServiceModelLabel:         "sklearn",
-						constants.KServiceEndpointLabel:      "default",
-						constants.KServiceComponentLabel:     "predictor",
+						"serving.kubeflow.org/inferenceservice": "sklearn",
+						constants.KServiceModelLabel:            "sklearn",
+						constants.KServiceEndpointLabel:         "default",
+						constants.KServiceComponentLabel:        "predictor",
 					},
 				},
 				Spec: v1.PodSpec{
@@ -234,10 +234,10 @@ func TestAgentInjector(t *testing.T) {
 						constants.LoggerModeInternalAnnotationKey:    string(v1beta1.LogAll),
 					},
 					Labels: map[string]string{
-						"serving.kserve.io/inferenceservice": "sklearn",
-						constants.KServiceModelLabel:         "sklearn",
-						constants.KServiceEndpointLabel:      "default",
-						constants.KServiceComponentLabel:     "predictor",
+						"serving.kubeflow.org/inferenceservice": "sklearn",
+						constants.KServiceModelLabel:            "sklearn",
+						constants.KServiceEndpointLabel:         "default",
+						constants.KServiceComponentLabel:        "predictor",
 					},
 				},
 				Spec: v1.PodSpec{

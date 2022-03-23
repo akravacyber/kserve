@@ -24,8 +24,8 @@ setup(
     name='aifserver',
     version='0.7.0',
     author_email='Andrew.Butler@ibm.com',
-    license='https://github.com/kserve/kserve/LICENSE',
-    url='https://github.com/kserve/kserve/python/aifserver',
+    license='https://github.com/akravacyber/kserve/LICENSE',
+    url='https://github.com/akravacyber/kserve/python/aifserver',
     description='Model Server implementation for AI fairness. \
                  Not intended for use outside KServe Frameworks Images',
     long_description=open('README.md').read(),

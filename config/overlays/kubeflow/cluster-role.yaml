@@ -19,7 +19,7 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-kserve-admin: "true"
 rules:
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - inferenceservices
   verbs:
@@ -60,7 +60,7 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-view: "true"
 rules:
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - inferenceservices
   verbs:

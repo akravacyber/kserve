@@ -65,7 +65,7 @@ def test_triton():
                                                                       KSERVE_TEST_NAMESPACE,
                                                                       "services", service_name + "-predictor-default"))
         deployments = kserve_client.app_api. \
-            list_namespaced_deployment(KSERVE_TEST_NAMESPACE, label_selector='serving.kserve.io/'
+            list_namespaced_deployment(KSERVE_TEST_NAMESPACE, label_selector='serving.kubeflow.org/'
                                        'inferenceservice={}'.
                                        format(service_name))
         for deployment in deployments.items:
@@ -116,7 +116,7 @@ def test_triton_runtime():
                                                                       KSERVE_TEST_NAMESPACE,
                                                                       "services", service_name + "-predictor-default"))
         deployments = kserve_client.app_api. \
-            list_namespaced_deployment(KSERVE_TEST_NAMESPACE, label_selector='serving.kserve.io/'
+            list_namespaced_deployment(KSERVE_TEST_NAMESPACE, label_selector='serving.kubeflow.org/'
                                        'inferenceservice={}'.
                                        format(service_name))
         for deployment in deployments.items:

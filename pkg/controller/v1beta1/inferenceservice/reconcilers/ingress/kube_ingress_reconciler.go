@@ -21,9 +21,9 @@ import (
 
 	"knative.dev/pkg/network"
 
-	v1beta1api "github.com/kserve/kserve/pkg/apis/serving/v1beta1"
-	"github.com/kserve/kserve/pkg/constants"
-	"github.com/kserve/kserve/pkg/utils"
+	v1beta1api "github.com/akravacyber/kserve/pkg/apis/serving/v1beta1"
+	"github.com/akravacyber/kserve/pkg/constants"
+	"github.com/akravacyber/kserve/pkg/utils"
 	corev1 "k8s.io/api/core/v1"
 	netv1 "k8s.io/api/networking/v1"
 	"k8s.io/apimachinery/pkg/api/equality"

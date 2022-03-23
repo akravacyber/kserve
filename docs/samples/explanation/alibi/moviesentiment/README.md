@@ -9,7 +9,7 @@ We can create a InferenceService with a trained sklearn predictor for this datas
 The InferenceService is shown below:
 
 ```
-apiVersion: "serving.kserve.io/v1beta1"
+apiVersion: "serving.kubeflow.org/v1beta1"
 kind: "InferenceService"
 metadata:
   name: "moviesentiment"
@@ -200,7 +200,7 @@ This shows the key word "bad" was identified and examples show it in context usi
 You can add custom configuration for the Anchor Text explainer in the 'config' section. For example we can change the text explainer to sample from the corpus rather than use UKN placeholders:
 
 ```
-apiVersion: "serving.kserve.io/v1alpha2"
+apiVersion: "serving.kubeflow.org/v1alpha2"
 kind: "InferenceService"
 metadata:
   name: "moviesentiment"

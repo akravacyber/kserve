@@ -25,8 +25,8 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/kserve/kserve/pkg/agent/storage"
-	v1 "github.com/kserve/kserve/pkg/apis/serving/v1alpha1"
+	"github.com/akravacyber/kserve/pkg/agent/storage"
+	v1 "github.com/akravacyber/kserve/pkg/apis/serving/v1alpha1"
 	"go.uber.org/zap"
 )
 

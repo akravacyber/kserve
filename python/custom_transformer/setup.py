@@ -27,7 +27,7 @@ setup(
     name='grpc_image_transformer',
     version='0.1.0',
     author_email='dsun20@bloomberg.net',
-    url='https://github.com/kserve/kserve/python/custom_transformer',
+    url='https://github.com/akravacyber/kserve/python/custom_transformer',
     description='gRPCImageTransformer',
     python_requires='>=3.7',
     install_requires=REQUIRES,

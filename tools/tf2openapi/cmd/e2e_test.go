@@ -13,7 +13,7 @@ import (
 	"github.com/onsi/gomega"
 	gomegaTypes "github.com/onsi/gomega/types"
 
-	"github.com/kserve/kserve/tools/tf2openapi/types"
+	"github.com/akravacyber/kserve/tools/tf2openapi/types"
 )
 
 // Functional E2E example

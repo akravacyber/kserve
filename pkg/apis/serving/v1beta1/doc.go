@@ -19,5 +19,5 @@ limitations under the License.
 // +k8s:deepcopy-gen=package,register
 // +k8s:conversion-gen=kserve/pkg/apis/serving
 // +k8s:defaulter-gen=TypeMeta
-// +groupName=serving.kserve.io
+// +groupName=serving.kubeflow.org
 package v1beta1

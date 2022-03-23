@@ -154,7 +154,7 @@ log INFO "extracting inference service uids"
 declare -A infr_uid_map
 for (( i=0; i<${isvc_count}; i++ ));
 do
-    infr_uid_map[${isvc_names[$i]}]=$(kubectl get inferenceservice.serving.kserve.io ${isvc_names[$i]} -n ${isvc_ns[$i]} -o json | jq --raw-output '.metadata.uid')
+    infr_uid_map[${isvc_names[$i]}]=$(kubectl get inferenceservice.serving.kubeflow.org ${isvc_names[$i]} -n ${isvc_ns[$i]} -o json | jq --raw-output '.metadata.uid')
 done
 
 # Update knative services with new owner reference
@@ -165,7 +165,7 @@ do
     if [ $owner_ref_count -eq 0 ]; then
         isvc_name=${ksvc_isvc_map[${ksvc_names[$i]}]}
         isvc_uid=${infr_uid_map[${isvc_name}]}
-        kubectl patch ksvc ${ksvc_names[$i]} -n ${ksvc_ns[$i]} --type='json' -p='[{"op": "add", "path": "/metadata/ownerReferences", "value": [{"apiVersion": "serving.kserve.io/v1beta1","blockOwnerDeletion": true,"controller": true,"kind": "InferenceService","name": "'${isvc_name}'","uid": "'${isvc_uid}'"}] }]'
+        kubectl patch ksvc ${ksvc_names[$i]} -n ${ksvc_ns[$i]} --type='json' -p='[{"op": "add", "path": "/metadata/ownerReferences", "value": [{"apiVersion": "serving.kubeflow.org/v1beta1","blockOwnerDeletion": true,"controller": true,"kind": "InferenceService","name": "'${isvc_name}'","uid": "'${isvc_uid}'"}] }]'
     fi
 done
 
@@ -176,7 +176,7 @@ do
     owner_ref_count=$(kubectl get virtualservices ${isvc_names[$i]} -n ${isvc_ns[$i]} -o json | jq --raw-output '.metadata.ownerReferences | length')
     if [ $owner_ref_count -eq 0 ]; then
         isvc_uid=${infr_uid_map[${isvc_names[$i]}]}
-        kubectl patch virtualservices ${isvc_names[$i]} -n ${isvc_ns[$i]} --type='json' -p='[{"op": "add", "path": "/metadata/ownerReferences", "value": [{"apiVersion": "serving.kserve.io/v1beta1","blockOwnerDeletion": true,"controller": true,"kind": "InferenceService","name": "'${isvc_names[$i]}'","uid": "'${isvc_uid}'"}] }]'
+        kubectl patch virtualservices ${isvc_names[$i]} -n ${isvc_ns[$i]} --type='json' -p='[{"op": "add", "path": "/metadata/ownerReferences", "value": [{"apiVersion": "serving.kubeflow.org/v1beta1","blockOwnerDeletion": true,"controller": true,"kind": "InferenceService","name": "'${isvc_names[$i]}'","uid": "'${isvc_uid}'"}] }]'
     fi
 done
 sleep 5
@@ -188,7 +188,7 @@ do
     if [ "${kfserving_isvc_status[${isvc_names[$i]}]}" == "True" ]; then
         (
             trap 'log ERROR "inference service ${isvc_names[$i]} did not migrate properly. migration job exits with code 1."' ERR
-            kubectl wait --for=condition=ready --timeout=10s inferenceservice.serving.kserve.io/${isvc_names[$i]} -n ${isvc_ns[$i]}
+            kubectl wait --for=condition=ready --timeout=10s inferenceservice.serving.kubeflow.org/${isvc_names[$i]} -n ${isvc_ns[$i]}
         )
     fi
 done

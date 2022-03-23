@@ -65,7 +65,7 @@ def test_tabular_explainer():
                                                                              KSERVE_TEST_NAMESPACE, "services",
                                                                              service_name + "-predictor-default"))
         pods = kserve_client.core_api.list_namespaced_pod(KSERVE_TEST_NAMESPACE,
-                                                          label_selector='serving.kserve.io/inferenceservice={}'.
+                                                          label_selector='serving.kubeflow.org/inferenceservice={}'.
                                                           format(service_name))
         for pod in pods.items:
             logging.info(pod)

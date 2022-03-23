@@ -20,11 +20,11 @@ import (
 	"context"
 	"time"
 
+	"github.com/akravacyber/kserve/pkg/apis/serving/v1beta1"
+	"github.com/akravacyber/kserve/pkg/constants"
 	"github.com/golang/protobuf/proto"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	"github.com/kserve/kserve/pkg/apis/serving/v1beta1"
-	"github.com/kserve/kserve/pkg/constants"
 	. "github.com/onsi/ginkgo"
 	"github.com/onsi/gomega"
 	. "github.com/onsi/gomega"
@@ -121,10 +121,10 @@ var _ = Describe("v1beta1 inference service controller", func() {
 					Name:      serviceKey.Name,
 					Namespace: serviceKey.Namespace,
 					Annotations: map[string]string{
-						"serving.kserve.io/deploymentMode":              "RawDeployment",
-						"serving.kserve.io/autoscalerClass":             "hpa",
-						"serving.kserve.io/metrics":                     "cpu",
-						"serving.kserve.io/targetUtilizationPercentage": "75",
+						"serving.kubeflow.org/deploymentMode":              "RawDeployment",
+						"serving.kubeflow.org/autoscalerClass":             "hpa",
+						"serving.kubeflow.org/metrics":                     "cpu",
+						"serving.kubeflow.org/targetUtilizationPercentage": "75",
 					},
 				},
 				Spec: v1beta1.InferenceServiceSpec{
@@ -190,10 +190,10 @@ var _ = Describe("v1beta1 inference service controller", func() {
 							},
 							Annotations: map[string]string{
 								constants.StorageInitializerSourceUriInternalAnnotationKey: *isvc.Spec.Predictor.Tensorflow.StorageURI,
-								"serving.kserve.io/deploymentMode":                         "RawDeployment",
-								"serving.kserve.io/autoscalerClass":                        "hpa",
-								"serving.kserve.io/metrics":                                "cpu",
-								"serving.kserve.io/targetUtilizationPercentage":            "75",
+								"serving.kubeflow.org/deploymentMode":                      "RawDeployment",
+								"serving.kubeflow.org/autoscalerClass":                     "hpa",
+								"serving.kubeflow.org/metrics":                             "cpu",
+								"serving.kubeflow.org/targetUtilizationPercentage":         "75",
 							},
 						},
 						Spec: v1.PodSpec{

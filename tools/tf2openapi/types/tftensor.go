@@ -6,9 +6,9 @@ TFTensor represents a logical tensor. It contains the information from TensorInf
 tensor and not an actual tensor).
 */
 import (
+	fw "github.com/akravacyber/kserve/tools/tf2openapi/generated/framework"
+	pb "github.com/akravacyber/kserve/tools/tf2openapi/generated/protobuf"
 	"github.com/getkin/kin-openapi/openapi3"
-	fw "github.com/kserve/kserve/tools/tf2openapi/generated/framework"
-	pb "github.com/kserve/kserve/tools/tf2openapi/generated/protobuf"
 )
 
 const B64KeySuffix string = "_bytes"

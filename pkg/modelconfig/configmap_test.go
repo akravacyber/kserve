@@ -20,8 +20,8 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/kserve/kserve/pkg/apis/serving/v1alpha1"
-	"github.com/kserve/kserve/pkg/constants"
+	"github.com/akravacyber/kserve/pkg/apis/serving/v1alpha1"
+	"github.com/akravacyber/kserve/pkg/constants"
 	testify "github.com/stretchr/testify/assert"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

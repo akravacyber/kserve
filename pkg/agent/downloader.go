@@ -27,8 +27,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/kserve/kserve/pkg/agent/storage"
-	"github.com/kserve/kserve/pkg/apis/serving/v1alpha1"
+	"github.com/akravacyber/kserve/pkg/agent/storage"
+	"github.com/akravacyber/kserve/pkg/apis/serving/v1alpha1"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 )

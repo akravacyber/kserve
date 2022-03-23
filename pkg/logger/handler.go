@@ -23,9 +23,9 @@ import (
 	"net/http/httptest"
 	"net/url"
 
+	"github.com/akravacyber/kserve/pkg/apis/serving/v1beta1"
 	"github.com/go-logr/logr"
 	guuid "github.com/google/uuid"
-	"github.com/kserve/kserve/pkg/apis/serving/v1beta1"
 	"knative.dev/pkg/network"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"

@@ -3,9 +3,9 @@ package generator
 import (
 	"fmt"
 
+	pb "github.com/akravacyber/kserve/tools/tf2openapi/generated/protobuf"
+	"github.com/akravacyber/kserve/tools/tf2openapi/types"
 	"github.com/getkin/kin-openapi/openapi3"
-	pb "github.com/kserve/kserve/tools/tf2openapi/generated/protobuf"
-	"github.com/kserve/kserve/tools/tf2openapi/types"
 )
 
 const (

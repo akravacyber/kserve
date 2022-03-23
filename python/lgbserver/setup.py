@@ -26,7 +26,7 @@ setup(
     version='0.7.0',
     author_email='linyiming@ainnovation.com',
     license='../../LICENSE.txt',
-    url='https://github.com/kserve/kserve/python/lgbserver',
+    url='https://github.com/akravacyber/kserve/python/lgbserver',
     description='Model Server implementation for LightGBM. \
                  Not intended for use outside KServe Frameworks Images',
     long_description=open('README.md').read(),

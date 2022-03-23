@@ -26,7 +26,7 @@ fi
 # Generating files 
 ${CODEGEN_PKG}/generate-groups.sh \
     all \
-    "github.com/kserve/kserve/pkg/client" \
-    "github.com/kserve/kserve/pkg/apis" \
+    "github.com/akravacyber/kserve/pkg/client" \
+    "github.com/akravacyber/kserve/pkg/apis" \
     "serving:v1beta1" \
     --go-header-file ${KUBE_ROOT}/hack/boilerplate.go.txt

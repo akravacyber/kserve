@@ -22,7 +22,7 @@ import (
 	"k8s.io/apimachinery/pkg/api/resource"
 	"knative.dev/pkg/kmp"
 
-	"github.com/kserve/kserve/pkg/constants"
+	"github.com/akravacyber/kserve/pkg/constants"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -72,10 +72,10 @@ func TestBatcherInjector(t *testing.T) {
 						constants.BatcherTimeoutInternalAnnotationKey:      "60",
 					},
 					Labels: map[string]string{
-						"serving.kserve.io/inferenceservice": "sklearn",
-						constants.KServiceModelLabel:         "sklearn",
-						constants.KServiceEndpointLabel:      "default",
-						constants.KServiceComponentLabel:     "predictor",
+						"serving.kubeflow.org/inferenceservice": "sklearn",
+						constants.KServiceModelLabel:            "sklearn",
+						constants.KServiceEndpointLabel:         "default",
+						constants.KServiceComponentLabel:        "predictor",
 					},
 				},
 				Spec: v1.PodSpec{

@@ -4,7 +4,7 @@ In this example, we use a trained pytorch mnist model to predict handwritten dig
 
 ## Setup
 
-1. Your ~/.kube/config should point to a cluster with [KServe installed](https://github.com/kserve/kserve/#installation).
+1. Your ~/.kube/config should point to a cluster with [KServe installed](https://github.com/akravacyber/kserve/#installation).
 2. Your cluster's Istio Ingress gateway must be [network accessible](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/).
 
 
@@ -27,7 +27,7 @@ kubectl apply -f gpu.yaml
 Expected Output
 
 ```bash
-$inferenceservice.serving.kserve.io/torchserve created
+$inferenceservice.serving.kubeflow.org/torchserve created
 ```
 
 The first step is to [determine the ingress IP and ports](https://kserve.github.io/website/get_started/first_isvc/#3-determine-the-ingress-ip-and-ports) and set `INGRESS_HOST` and `INGRESS_PORT`
@@ -85,7 +85,7 @@ kubectl apply -f grpc.yaml
 Expected Output
 
 ```bash
-$inferenceservice.serving.kserve.io/torchserve-grpc created
+$inferenceservice.serving.kubeflow.org/torchserve-grpc created
 ```
 
 ### Run Inference with gRPC protocol

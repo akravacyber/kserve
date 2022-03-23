@@ -19,8 +19,8 @@ package deployment
 import (
 	"context"
 
-	"github.com/kserve/kserve/pkg/apis/serving/v1beta1"
-	"github.com/kserve/kserve/pkg/constants"
+	"github.com/akravacyber/kserve/pkg/apis/serving/v1beta1"
+	"github.com/akravacyber/kserve/pkg/constants"
 	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/equality"

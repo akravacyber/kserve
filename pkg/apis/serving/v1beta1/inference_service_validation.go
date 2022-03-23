@@ -23,8 +23,8 @@ import (
 
 	"regexp"
 
-	"github.com/kserve/kserve/pkg/constants"
-	"github.com/kserve/kserve/pkg/utils"
+	"github.com/akravacyber/kserve/pkg/constants"
+	"github.com/akravacyber/kserve/pkg/utils"
 	"k8s.io/apimachinery/pkg/runtime"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
@@ -42,7 +42,7 @@ var (
 	IsvcRegexp = regexp.MustCompile("^" + IsvcNameFmt + "$")
 )
 
-// +kubebuilder:webhook:verbs=create;update,path=/validate-inferenceservices,mutating=false,failurePolicy=fail,groups=serving.kserve.io,resources=inferenceservices,versions=v1beta1,name=inferenceservice.kserve-webhook-server.validator
+// +kubebuilder:webhook:verbs=create;update,path=/validate-inferenceservices,mutating=false,failurePolicy=fail,groups=serving.kubeflow.org,resources=inferenceservices,versions=v1beta1,name=inferenceservice.kserve-webhook-server.validator
 var _ webhook.Validator = &InferenceService{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type

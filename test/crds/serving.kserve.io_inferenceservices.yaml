@@ -4,9 +4,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.4.0
   creationTimestamp: null
-  name: clusterservingruntimes.serving.kserve.io
+  name: clusterservingruntimes.serving.kubeflow.org
 spec:
-  group: serving.kserve.io
+  group: serving.kubeflow.org
   names:
     kind: ClusterServingRuntime
     listKind: ClusterServingRuntimeList
@@ -715,9 +715,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.4.0
   creationTimestamp: null
-  name: inferenceservices.serving.kserve.io
+  name: inferenceservices.serving.kubeflow.org
 spec:
-  group: serving.kserve.io
+  group: serving.kubeflow.org
   names:
     kind: InferenceService
     listKind: InferenceServiceList
@@ -13594,9 +13594,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.4.0
   creationTimestamp: null
-  name: servingruntimes.serving.kserve.io
+  name: servingruntimes.serving.kubeflow.org
 spec:
-  group: serving.kserve.io
+  group: serving.kubeflow.org
   names:
     kind: ServingRuntime
     listKind: ServingRuntimeList
@@ -14305,9 +14305,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.4.0
   creationTimestamp: null
-  name: trainedmodels.serving.kserve.io
+  name: trainedmodels.serving.kubeflow.org
 spec:
-  group: serving.kserve.io
+  group: serving.kubeflow.org
   names:
     kind: TrainedModel
     listKind: TrainedModelList

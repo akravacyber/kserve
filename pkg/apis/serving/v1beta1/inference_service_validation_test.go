@@ -33,10 +33,10 @@ func makeTestRawInferenceService() InferenceService {
 			Name:      "foo",
 			Namespace: "default",
 			Annotations: map[string]string{
-				"serving.kserve.io/deploymentMode":              "RawDeployment",
-				"serving.kserve.io/autoscalerClass":             "hpa",
-				"serving.kserve.io/metrics":                     "cpu",
-				"serving.kserve.io/targetUtilizationPercentage": "75",
+				"serving.kubeflow.org/deploymentMode":              "RawDeployment",
+				"serving.kubeflow.org/autoscalerClass":             "hpa",
+				"serving.kubeflow.org/metrics":                     "cpu",
+				"serving.kubeflow.org/targetUtilizationPercentage": "75",
 			},
 		},
 		Spec: InferenceServiceSpec{
@@ -82,37 +82,37 @@ func TestValidAutoscalerClassTypeAndHPAMetrics(t *testing.T) {
 func TestInvalidAutoscalerClassType(t *testing.T) {
 	g := gomega.NewGomegaWithT(t)
 	isvc := makeTestRawInferenceService()
-	isvc.ObjectMeta.Annotations["serving.kserve.io/autoscalerClass"] = "test"
+	isvc.ObjectMeta.Annotations["serving.kubeflow.org/autoscalerClass"] = "test"
 	g.Expect(isvc.ValidateCreate()).ShouldNot(gomega.Succeed())
 }
 
 func TestValidTargetUtilizationPercentage(t *testing.T) {
 	g := gomega.NewGomegaWithT(t)
 	isvc := makeTestRawInferenceService()
-	isvc.ObjectMeta.Annotations["serving.kserve.io/targetUtilizationPercentage"] = "70"
+	isvc.ObjectMeta.Annotations["serving.kubeflow.org/targetUtilizationPercentage"] = "70"
 	g.Expect(isvc.ValidateCreate()).Should(gomega.Succeed())
 }
 
 func TestInvalidTargetUtilizationPercentage(t *testing.T) {
 	g := gomega.NewGomegaWithT(t)
 	isvc := makeTestRawInferenceService()
-	isvc.ObjectMeta.Annotations["serving.kserve.io/targetUtilizationPercentage"] = "101"
+	isvc.ObjectMeta.Annotations["serving.kubeflow.org/targetUtilizationPercentage"] = "101"
 	g.Expect(isvc.ValidateCreate()).ShouldNot(gomega.Succeed())
 
-	isvc.ObjectMeta.Annotations["serving.kserve.io/targetUtilizationPercentage"] = "abc"
+	isvc.ObjectMeta.Annotations["serving.kubeflow.org/targetUtilizationPercentage"] = "abc"
 	g.Expect(isvc.ValidateCreate()).ShouldNot(gomega.Succeed())
 
-	isvc.ObjectMeta.Annotations["serving.kserve.io/targetUtilizationPercentage"] = "0"
+	isvc.ObjectMeta.Annotations["serving.kubeflow.org/targetUtilizationPercentage"] = "0"
 	g.Expect(isvc.ValidateCreate()).ShouldNot(gomega.Succeed())
 
-	isvc.ObjectMeta.Annotations["serving.kserve.io/targetUtilizationPercentage"] = "99.9"
+	isvc.ObjectMeta.Annotations["serving.kubeflow.org/targetUtilizationPercentage"] = "99.9"
 	g.Expect(isvc.ValidateCreate()).ShouldNot(gomega.Succeed())
 }
 
 func TestInvalidAutoscalerHPAMetrics(t *testing.T) {
 	g := gomega.NewGomegaWithT(t)
 	isvc := makeTestRawInferenceService()
-	isvc.ObjectMeta.Annotations["serving.kserve.io/metrics"] = "test"
+	isvc.ObjectMeta.Annotations["serving.kubeflow.org/metrics"] = "test"
 	g.Expect(isvc.ValidateCreate()).ShouldNot(gomega.Succeed())
 }
 

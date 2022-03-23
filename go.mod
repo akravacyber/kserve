@@ -1,4 +1,4 @@
-module github.com/kserve/kserve
+module github.com/akravacyber/kserve
 
 go 1.17
 

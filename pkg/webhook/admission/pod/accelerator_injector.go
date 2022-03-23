@@ -16,8 +16,8 @@ limitations under the License.
 package pod
 
 import (
-	"github.com/kserve/kserve/pkg/constants"
-	"github.com/kserve/kserve/pkg/utils"
+	"github.com/akravacyber/kserve/pkg/constants"
+	"github.com/akravacyber/kserve/pkg/utils"
 	v1 "k8s.io/api/core/v1"
 )
 

@@ -6,7 +6,7 @@ C++ is very often the language of choice, The following example will outline the
 to a serialized representation that can be loaded and executed purely from C++ like Triton Inference Server, with no dependency on Python.
 
 ## Setup
-1. Your ~/.kube/config should point to a cluster with KServe installed](https://github.com/kserve/kserve/#installation).
+1. Your ~/.kube/config should point to a cluster with KServe installed](https://github.com/akravacyber/kserve/#installation).
 2. Your cluster's Istio Ingress gateway must be [network accessible](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/).
 3. Skip [tag resolution](https://knative.dev/docs/serving/tag-resolution/) for `nvcr.io` which requires auth to resolve triton inference server image digest
 ```bash
@@ -116,7 +116,7 @@ kubectl apply -f torchscript.yaml
 ```
 
 ```yaml
-apiVersion: serving.kserve.io/v1beta1
+apiVersion: serving.kubeflow.org/v1beta1
 kind: InferenceService
 metadata:
   name: torchscript-cifar10
@@ -137,7 +137,7 @@ We want one thread per worker instead of many threads per worker to avoid conten
 
 Expected Output and check the readiness of the `InferenceService`
 ```
-$ inferenceservice.serving.kserve.io/torchscript-cifar10 created
+$ inferenceservice.serving.kubeflow.org/torchscript-cifar10 created
 ```
 
 ```bash
@@ -147,7 +147,7 @@ kubectl get inferenceservices torchscript-demo
 ### Run a prediction with curl
 The first step is to [determine the ingress IP and ports](../../../../../README.md#determine-the-ingress-ip-and-ports) and set `INGRESS_HOST` and `INGRESS_PORT`
 
-The latest Triton Inference Server already switched to use KServe [prediction V2 protocol](https://github.com/kserve/kserve/tree/master/docs/predict-api/v2), so 
+The latest Triton Inference Server already switched to use KServe [prediction V2 protocol](https://github.com/akravacyber/kserve/tree/master/docs/predict-api/v2), so 
 the input request needs to follow the V2 schema with the specified data type, shape.
 ```bash
 MODEL_NAME=cifar10
@@ -185,7 +185,7 @@ expected output
 Create the inference service yaml and expose the gRPC port, currently only one port is allowed to expose either HTTP or gRPC port and by default HTTP port is exposed.
 
 ```yaml
-apiVersion: serving.kserve.io/v1beta1
+apiVersion: serving.kubeflow.org/v1beta1
 kind: InferenceService
 metadata:
   name: torchscript-cifar10
@@ -290,7 +290,7 @@ docker build -t $DOCKER_USER/image-transformer-v2:latest -f transformer.Dockerfi
 ### Create the InferenceService with Transformer
 Please use the [YAML file](./torch_transformer.yaml) to create the InferenceService, which adds the image transformer component with the docker image built from above.
 ```yaml
-apiVersion: serving.kserve.io/v1beta1
+apiVersion: serving.kubeflow.org/v1beta1
 kind: InferenceService
 metadata:
   name: torch-transformer
@@ -323,7 +323,7 @@ kubectl apply -f torch_transformer.yaml
 
 Expected Output
 ```
-$ inferenceservice.serving.kserve.io/torch-transformer created
+$ inferenceservice.serving.kubeflow.org/torch-transformer created
 ```
 
 ### Run a prediction from curl

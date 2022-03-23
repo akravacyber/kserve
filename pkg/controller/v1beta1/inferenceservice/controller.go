@@ -21,15 +21,15 @@ import (
 	"fmt"
 	"reflect"
 
+	v1alpha1api "github.com/akravacyber/kserve/pkg/apis/serving/v1alpha1"
+	v1beta1api "github.com/akravacyber/kserve/pkg/apis/serving/v1beta1"
+	"github.com/akravacyber/kserve/pkg/constants"
+	"github.com/akravacyber/kserve/pkg/controller/v1beta1/inferenceservice/components"
+	"github.com/akravacyber/kserve/pkg/controller/v1beta1/inferenceservice/reconcilers/ingress"
+	modelconfig "github.com/akravacyber/kserve/pkg/controller/v1beta1/inferenceservice/reconcilers/modelconfig"
+	isvcutils "github.com/akravacyber/kserve/pkg/controller/v1beta1/inferenceservice/utils"
+	"github.com/akravacyber/kserve/pkg/utils"
 	"github.com/go-logr/logr"
-	v1alpha1api "github.com/kserve/kserve/pkg/apis/serving/v1alpha1"
-	v1beta1api "github.com/kserve/kserve/pkg/apis/serving/v1beta1"
-	"github.com/kserve/kserve/pkg/constants"
-	"github.com/kserve/kserve/pkg/controller/v1beta1/inferenceservice/components"
-	"github.com/kserve/kserve/pkg/controller/v1beta1/inferenceservice/reconcilers/ingress"
-	modelconfig "github.com/kserve/kserve/pkg/controller/v1beta1/inferenceservice/reconcilers/modelconfig"
-	isvcutils "github.com/kserve/kserve/pkg/controller/v1beta1/inferenceservice/utils"
-	"github.com/kserve/kserve/pkg/utils"
 	"github.com/pkg/errors"
 	"istio.io/client-go/pkg/apis/networking/v1alpha3"
 	appsv1 "k8s.io/api/apps/v1"
@@ -47,14 +47,14 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
 )
 
-// +kubebuilder:rbac:groups=serving.kserve.io,resources=inferenceservices;inferenceservices/finalizers,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=serving.kserve.io,resources=servingruntimes;servingruntimes/finalizers,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=serving.kserve.io,resources=servingruntimes/status,verbs=get;update;patch
-// +kubebuilder:rbac:groups=serving.kserve.io,resources=clusterservingruntimes;clusterservingruntimes/finalizers,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=serving.kserve.io,resources=clusterservingruntimes/status,verbs=get;update;patch
+// +kubebuilder:rbac:groups=serving.kubeflow.org,resources=inferenceservices;inferenceservices/finalizers,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:groups=serving.kubeflow.org,resources=servingruntimes;servingruntimes/finalizers,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:groups=serving.kubeflow.org,resources=servingruntimes/status,verbs=get;update;patch
+// +kubebuilder:rbac:groups=serving.kubeflow.org,resources=clusterservingruntimes;clusterservingruntimes/finalizers,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:groups=serving.kubeflow.org,resources=clusterservingruntimes/status,verbs=get;update;patch
 // +kubebuilder:rbac:groups=apps,resources=deployments,verbs=get;list;watch;create;update;patch;delete
 // +kubebuilder:rbac:groups=networking.k8s.io,resources=ingresses,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=serving.kserve.io,resources=inferenceservices/status,verbs=get;update;patch
+// +kubebuilder:rbac:groups=serving.kubeflow.org,resources=inferenceservices/status,verbs=get;update;patch
 // +kubebuilder:rbac:groups=serving.knative.dev,resources=services,verbs=get;list;watch;create;update;patch;delete
 // +kubebuilder:rbac:groups=serving.knative.dev,resources=services/finalizers,verbs=get;list;watch;create;update;patch;delete
 // +kubebuilder:rbac:groups=serving.knative.dev,resources=services/status,verbs=get;update;patch

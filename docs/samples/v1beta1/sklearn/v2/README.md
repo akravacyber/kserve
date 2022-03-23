@@ -89,7 +89,7 @@ For this, we will just need to use **version `v1beta1`** of the
 `InferenceService` CRD and set the the **`protocolVersion` field to `v2`**.
 
 ```yaml
-apiVersion: "serving.kserve.io/v1beta1"
+apiVersion: "serving.kubeflow.org/v1beta1"
 kind: "InferenceService"
 metadata:
   name: "sklearn-irisv2"
@@ -107,7 +107,7 @@ Note that this makes the following assumptions:
   `gs://seldon-models/sklearn/iris`.
 - There is a K8s cluster available, accessible through `kubectl`.
 - KServe has already been [installed in your
-  cluster](https://github.com/kserve/kserve#installation).
+  cluster](https://github.com/akravacyber/kserve#installation).
 
 Assuming that we've got a cluster accessible through `kubectl` with KServe
 already installed, we can deploy our model as:

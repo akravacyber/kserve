@@ -6,9 +6,9 @@ import (
 	"log"
 	"os"
 
+	pb "github.com/akravacyber/kserve/tools/tf2openapi/generated/protobuf"
+	"github.com/akravacyber/kserve/tools/tf2openapi/generator"
 	"github.com/golang/protobuf/proto"
-	pb "github.com/kserve/kserve/tools/tf2openapi/generated/protobuf"
-	"github.com/kserve/kserve/tools/tf2openapi/generator"
 	"github.com/spf13/cobra"
 )
 

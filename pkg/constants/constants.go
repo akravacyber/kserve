@@ -32,7 +32,7 @@ import (
 // KServe Constants
 var (
 	KServeName                     = "kserve"
-	KServeAPIGroupName             = "serving.kserve.io"
+	KServeAPIGroupName             = "serving.kubeflow.org"
 	KnativeAutoscalingAPIGroupName = "autoscaling.knative.dev"
 	KServeNamespace                = getEnvOrDefault("POD_NAMESPACE", "kserve")
 	KServeDefaultVersion           = "v0.5.0"
@@ -204,7 +204,7 @@ const (
 // Labels for TrainedModel
 const (
 	ParentInferenceServiceLabel = "inferenceservice"
-	InferenceServiceLabel       = "serving.kserve.io/inferenceservice"
+	InferenceServiceLabel       = "serving.kubeflow.org/inferenceservice"
 )
 
 // InferenceService default/canary constants

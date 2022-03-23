@@ -17,13 +17,13 @@ limitations under the License.
 package components
 
 import (
+	"github.com/akravacyber/kserve/pkg/constants"
+	"github.com/akravacyber/kserve/pkg/controller/v1beta1/inferenceservice/reconcilers/knative"
+	"github.com/akravacyber/kserve/pkg/controller/v1beta1/inferenceservice/reconcilers/raw"
+	isvcutils "github.com/akravacyber/kserve/pkg/controller/v1beta1/inferenceservice/utils"
+	"github.com/akravacyber/kserve/pkg/credentials"
+	"github.com/akravacyber/kserve/pkg/utils"
 	"github.com/go-logr/logr"
-	"github.com/kserve/kserve/pkg/constants"
-	"github.com/kserve/kserve/pkg/controller/v1beta1/inferenceservice/reconcilers/knative"
-	"github.com/kserve/kserve/pkg/controller/v1beta1/inferenceservice/reconcilers/raw"
-	isvcutils "github.com/kserve/kserve/pkg/controller/v1beta1/inferenceservice/utils"
-	"github.com/kserve/kserve/pkg/credentials"
-	"github.com/kserve/kserve/pkg/utils"
 	"github.com/pkg/errors"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -32,7 +32,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 
-	"github.com/kserve/kserve/pkg/apis/serving/v1beta1"
+	"github.com/akravacyber/kserve/pkg/apis/serving/v1beta1"
 )
 
 var _ Component = &Explainer{}

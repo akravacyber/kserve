@@ -2,7 +2,7 @@
 FROM golang:1.17 as builder
 
 # Copy in the go src
-WORKDIR /go/src/github.com/kserve/kserve
+WORKDIR /go/src/github.com/akravacyber/kserve
 COPY tools/  tools/
 COPY pkg/    pkg/
 COPY go.mod  go.mod
@@ -15,5 +15,5 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o tf2openapi ./tools/tf2o
 FROM gcr.io/distroless/static:latest
 WORKDIR /
 COPY third_party/ third_party/
-COPY --from=builder /go/src/github.com/kserve/kserve/tf2openapi .
+COPY --from=builder /go/src/github.com/akravacyber/kserve/tf2openapi .
 ENTRYPOINT ["/tf2openapi"]

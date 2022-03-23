@@ -27,7 +27,7 @@ kserve_client = KServeClient(config_file='./kserve/test/kubeconfig')
 mocked_unit_result = \
     '''
 {
-    "api_version": "serving.kserve.io/v1beta1",
+    "api_version": "serving.kubeflow.org/v1beta1",
     "kind": "InferenceService",
     "metadata": {
         "name": "flower-sample",
@@ -50,7 +50,7 @@ def generate_inferenceservice():
     predictor_spec = V1beta1PredictorSpec(tensorflow=tf_spec)
 
     isvc = V1beta1InferenceService(
-        api_version='serving.kserve.io/v1beta1',
+        api_version='serving.kubeflow.org/v1beta1',
         kind='InferenceService',
         metadata=client.V1ObjectMeta(name='flower-sample'),
         spec=V1beta1InferenceServiceSpec(predictor=predictor_spec))

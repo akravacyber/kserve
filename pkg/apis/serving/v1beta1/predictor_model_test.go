@@ -19,8 +19,8 @@ package v1beta1
 import (
 	"testing"
 
+	"github.com/akravacyber/kserve/pkg/apis/serving/v1alpha1"
 	"github.com/golang/protobuf/proto"
-	"github.com/kserve/kserve/pkg/apis/serving/v1alpha1"
 	"github.com/onsi/gomega"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"

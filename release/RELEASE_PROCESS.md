@@ -1,7 +1,7 @@
 # Release Process
 ## Create an issue for release tracking
 
-- Create an issue in [kserve/kserve](https://github.com/kserve/kserve)
+- Create an issue in [kserve/kserve](https://github.com/akravacyber/kserve)
 - Label the issue with `priority p0`
 - Label the issue with `kind process`
 - Announce the release in the release channel
@@ -13,7 +13,7 @@ In general, unless you're committing code that only applies to the release strea
 
 ### List of Components
 
-- [KServe](https://github.com/kserve/kserve)
+- [KServe](https://github.com/akravacyber/kserve)
 - [ModelMesh](https://github.com/kserve/modelmesh-serving)
 - [Website](https://github.com/kserve/website)
 

@@ -21,8 +21,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/kserve/kserve/pkg/agent/storage"
-	"github.com/kserve/kserve/pkg/utils"
+	"github.com/akravacyber/kserve/pkg/agent/storage"
+	"github.com/akravacyber/kserve/pkg/utils"
 	"k8s.io/apimachinery/pkg/runtime"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
@@ -46,7 +46,7 @@ var (
 	StorageUriProtocols = strings.Join(storage.GetAllProtocol(), CommaSpaceSeparator)
 )
 
-// +kubebuilder:webhook:verbs=create;update,path=/validate-trainedmodel,mutating=false,failurePolicy=fail,groups=serving.kserve.io,resources=trainedmodels,versions=v1alpha1,name=trainedmodel.kserve-webhook-server.validator
+// +kubebuilder:webhook:verbs=create;update,path=/validate-trainedmodel,mutating=false,failurePolicy=fail,groups=serving.kubeflow.org,resources=trainedmodels,versions=v1alpha1,name=trainedmodel.kserve-webhook-server.validator
 
 var _ webhook.Validator = &TrainedModel{}
 

@@ -24,7 +24,7 @@ setup(
     version='0.1.0',
     author_email='dsun20@bloomberg.net',
     license='../../LICENSE.txt',
-    url='https://github.com/kserve/kserve/tree/master/docs/samples/kafka',
+    url='https://github.com/akravacyber/kserve/tree/master/docs/samples/kafka',
     description='Transformer',
     long_description=open('README.md').read(),
     python_requires='>=3.7',

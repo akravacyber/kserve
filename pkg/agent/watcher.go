@@ -22,11 +22,11 @@ import (
 	"io/ioutil"
 	"path/filepath"
 
+	"github.com/akravacyber/kserve/pkg/apis/serving/v1alpha1"
+	"github.com/akravacyber/kserve/pkg/constants"
+	"github.com/akravacyber/kserve/pkg/modelconfig"
 	"github.com/fsnotify/fsnotify"
 	"github.com/google/go-cmp/cmp"
-	"github.com/kserve/kserve/pkg/apis/serving/v1alpha1"
-	"github.com/kserve/kserve/pkg/constants"
-	"github.com/kserve/kserve/pkg/modelconfig"
 	"go.uber.org/zap"
 )
 

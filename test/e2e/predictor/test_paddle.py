@@ -63,7 +63,7 @@ def test_paddle():
         kserve_client.wait_isvc_ready(service_name, namespace=KSERVE_TEST_NAMESPACE, timeout_seconds=720)
     except RuntimeError as e:
         pods = kserve_client.core_api.list_namespaced_pod(KSERVE_TEST_NAMESPACE,
-                                                          label_selector='serving.kserve.io/inferenceservice={}'.format(
+                                                          label_selector='serving.kubeflow.org/inferenceservice={}'.format(
                                                               service_name))
         for pod in pods.items:
             logging.info(pod)
@@ -106,7 +106,7 @@ def test_paddle_runtime():
         kserve_client.wait_isvc_ready(service_name, namespace=KSERVE_TEST_NAMESPACE, timeout_seconds=720)
     except RuntimeError as e:
         pods = kserve_client.core_api.list_namespaced_pod(KSERVE_TEST_NAMESPACE,
-                                                          label_selector='serving.kserve.io/inferenceservice={}'.format(
+                                                          label_selector='serving.kubeflow.org/inferenceservice={}'.format(
                                                               service_name))
         for pod in pods.items:
             logging.info(pod)

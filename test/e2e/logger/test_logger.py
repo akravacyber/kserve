@@ -74,7 +74,7 @@ def test_kserve_logger():
         kserve_client.wait_isvc_ready(service_name, namespace=KSERVE_TEST_NAMESPACE)
     except RuntimeError:
         pods = kserve_client.core_api.list_namespaced_pod(KSERVE_TEST_NAMESPACE,
-                                                          label_selector='serving.kserve.io/inferenceservice={}'.
+                                                          label_selector='serving.kubeflow.org/inferenceservice={}'.
                                                           format(service_name))
         for pod in pods.items:
             print(pod)
@@ -82,7 +82,7 @@ def test_kserve_logger():
     res = predict(service_name, './data/iris_input.json')
     assert(res["predictions"] == [1, 1])
     pods = kserve_client.core_api.list_namespaced_pod(KSERVE_TEST_NAMESPACE,
-                                                      label_selector='serving.kserve.io/inferenceservice={}'.
+                                                      label_selector='serving.kubeflow.org/inferenceservice={}'.
                                                       format(msg_dumper))
     time.sleep(5)
     log = ''

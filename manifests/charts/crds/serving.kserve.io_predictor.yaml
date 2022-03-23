@@ -8,9 +8,9 @@ metadata:
     app.kubernetes.io/instance: modelmesh-controller
     app.kubernetes.io/managed-by: modelmesh-controller
     app.kubernetes.io/name: modelmesh-controller
-  name: predictors.serving.kserve.io
+  name: predictors.serving.kubeflow.org
 spec:
-  group: serving.kserve.io
+  group: serving.kubeflow.org
   names:
     kind: Predictor
     listKind: PredictorList

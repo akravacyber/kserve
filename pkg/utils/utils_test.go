@@ -19,7 +19,7 @@ package utils
 import (
 	"testing"
 
-	"github.com/kserve/kserve/pkg/credentials/gcs"
+	"github.com/akravacyber/kserve/pkg/credentials/gcs"
 	v1 "k8s.io/api/core/v1"
 
 	"github.com/google/go-cmp/cmp"
@@ -58,11 +58,11 @@ func TestUnionUtil(t *testing.T) {
 		expected map[string]string
 	}{
 		"UnionTwoMaps": {
-			input1: map[string]string{"serving.kserve.io/service": "mnist",
+			input1: map[string]string{"serving.kubeflow.org/service": "mnist",
 				"label1": "value1"},
 			input2: map[string]string{"service.knative.dev/service": "mnist",
 				"label2": "value2"},
-			expected: map[string]string{"serving.kserve.io/service": "mnist",
+			expected: map[string]string{"serving.kubeflow.org/service": "mnist",
 				"label1": "value1", "service.knative.dev/service": "mnist", "label2": "value2"},
 		},
 		"UnionWithEmptyMap": {

@@ -23,8 +23,8 @@ setup(
     name='pytorchserver',
     version='0.7.0',
     author_email='singhan@us.ibm.com',
-    license='https://github.com/kserve/kserve/LICENSE',
-    url='https://github.com/kserve/kserve/python/pytorchserver',
+    license='https://github.com/akravacyber/kserve/LICENSE',
+    url='https://github.com/akravacyber/kserve/python/pytorchserver',
     description='Model Server implementation for PyTorch. ' +
     'Not intended for use outside KServe Frameworks Images',
     long_description=open('README.md').read(),

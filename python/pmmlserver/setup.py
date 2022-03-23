@@ -24,8 +24,8 @@ setup(
     name='pmmlserver',
     version='0.7.0',
     author_email='anyisalin@gmail.com',
-    license='https://github.com/kserve/kserve/LICENSE',
-    url='https://github.com/kserve/kserve/python/pmmlserver',
+    license='https://github.com/akravacyber/kserve/LICENSE',
+    url='https://github.com/akravacyber/kserve/python/pmmlserver',
     description='Model Server implementation for PMML. \
                  Not intended for use outside KServe Frameworks Images',
     long_description=open('README.md').read(),

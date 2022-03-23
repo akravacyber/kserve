@@ -24,7 +24,7 @@ spec:
       containers:
       - command:
         - /manager
-        image: ko://github.com/kserve/kserve/cmd/manager
+        image: ko://github.com/akravacyber/kserve/cmd/manager
         imagePullPolicy: Always
         name: manager
         securityContext:

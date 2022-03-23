@@ -13,7 +13,7 @@ metadata:
   annotations:
     cert-manager.io/inject-ca-from: kserve/serving-cert
     controller-gen.kubebuilder.io/version: v0.3.1-0.20200528125929-5c0c6ae3b64b
-  name: inferenceservices.serving.kserve.io
+  name: inferenceservices.serving.kubeflow.org
 spec:
   conversion:
     conversionReviewVersions:
@@ -26,7 +26,7 @@ spec:
         name: kserve-webhook-server-service
         namespace: kserve
         path: /convert
-  group: serving.kserve.io
+  group: serving.kubeflow.org
   names:
     kind: InferenceService
     listKind: InferenceServiceList
@@ -16030,7 +16030,7 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.3.1-0.20200528125929-5c0c6ae3b64b
   creationTimestamp: null
-  name: trainedmodels.serving.kserve.io
+  name: trainedmodels.serving.kubeflow.org
 spec:
   additionalPrinterColumns:
   - JSONPath: .status.url
@@ -16042,7 +16042,7 @@ spec:
   - JSONPath: .metadata.creationTimestamp
     name: Age
     type: date
-  group: serving.kserve.io
+  group: serving.kubeflow.org
   names:
     kind: TrainedModel
     listKind: TrainedModelList
@@ -16349,7 +16349,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - inferenceservices
   - inferenceservices/finalizers
@@ -16362,7 +16362,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - inferenceservices/status
   verbs:
@@ -16370,7 +16370,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - trainedmodels
   verbs:
@@ -16382,7 +16382,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - trainedmodels/status
   verbs:
@@ -16415,7 +16415,7 @@ rules:
   - get
   - list
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - inferenceservices
   - inferenceservices/status
@@ -16948,7 +16948,7 @@ kind: MutatingWebhookConfiguration
 metadata:
   annotations:
     cert-manager.io/inject-ca-from: kserve/serving-cert
-  name: inferenceservice.serving.kserve.io
+  name: inferenceservice.serving.kubeflow.org
 webhooks:
 - clientConfig:
     caBundle: Cg==
@@ -16960,7 +16960,7 @@ webhooks:
   name: inferenceservice.kserve-webhook-server.defaulter
   rules:
   - apiGroups:
-    - serving.kserve.io
+    - serving.kubeflow.org
     apiVersions:
     - v1alpha2
     operations:
@@ -16978,7 +16978,7 @@ webhooks:
   name: inferenceservice.kserve-webhook-server.v1beta1.defaulter
   rules:
   - apiGroups:
-    - serving.kserve.io
+    - serving.kubeflow.org
     apiVersions:
     - v1beta1
     operations:
@@ -17000,7 +17000,7 @@ webhooks:
       operator: DoesNotExist
   objectSelector:
     matchExpressions:
-    - key: serving.kserve.io/inferenceservice
+    - key: serving.kubeflow.org/inferenceservice
       operator: Exists
   rules:
   - apiGroups:
@@ -17018,7 +17018,7 @@ kind: ValidatingWebhookConfiguration
 metadata:
   annotations:
     cert-manager.io/inject-ca-from: kserve/serving-cert
-  name: inferenceservice.serving.kserve.io
+  name: inferenceservice.serving.kubeflow.org
 webhooks:
 - clientConfig:
     caBundle: Cg==
@@ -17030,7 +17030,7 @@ webhooks:
   name: inferenceservice.kserve-webhook-server.validator
   rules:
   - apiGroups:
-    - serving.kserve.io
+    - serving.kubeflow.org
     apiVersions:
     - v1alpha2
     operations:
@@ -17048,7 +17048,7 @@ webhooks:
   name: inferenceservice.kserve-webhook-server.v1beta1.validator
   rules:
   - apiGroups:
-    - serving.kserve.io
+    - serving.kubeflow.org
     apiVersions:
     - v1beta1
     operations:
@@ -17062,7 +17062,7 @@ kind: ValidatingWebhookConfiguration
 metadata:
   annotations:
     cert-manager.io/inject-ca-from: kserve/serving-cert
-  name: trainedmodel.serving.kserve.io
+  name: trainedmodel.serving.kubeflow.org
 webhooks:
 - clientConfig:
     caBundle: Cg==
@@ -17074,7 +17074,7 @@ webhooks:
   name: trainedmodel.kserve-webhook-server.validator
   rules:
   - apiGroups:
-    - serving.kserve.io
+    - serving.kubeflow.org
     apiVersions:
     - v1alpha1
     operations:

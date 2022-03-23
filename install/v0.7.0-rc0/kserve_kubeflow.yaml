@@ -7,7 +7,7 @@ metadata:
   labels:
     app: kserve
     app.kubernetes.io/name: kserve
-  name: inferenceservices.serving.kserve.io
+  name: inferenceservices.serving.kubeflow.org
 spec:
   conversion:
     conversionReviewVersions:
@@ -20,7 +20,7 @@ spec:
         name: kserve-webhook-server-service
         namespace: kubeflow
         path: /convert
-  group: serving.kserve.io
+  group: serving.kubeflow.org
   names:
     kind: InferenceService
     listKind: InferenceServiceList
@@ -16027,7 +16027,7 @@ metadata:
   labels:
     app: kserve
     app.kubernetes.io/name: kserve
-  name: trainedmodels.serving.kserve.io
+  name: trainedmodels.serving.kubeflow.org
 spec:
   additionalPrinterColumns:
   - JSONPath: .status.url
@@ -16039,7 +16039,7 @@ spec:
   - JSONPath: .metadata.creationTimestamp
     name: Age
     type: date
-  group: serving.kserve.io
+  group: serving.kubeflow.org
   names:
     kind: TrainedModel
     listKind: TrainedModelList
@@ -16354,7 +16354,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - inferenceservices
   - inferenceservices/finalizers
@@ -16367,7 +16367,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - inferenceservices/status
   verbs:
@@ -16375,7 +16375,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - trainedmodels
   verbs:
@@ -16387,7 +16387,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - trainedmodels/status
   verbs:
@@ -16422,7 +16422,7 @@ rules:
   - get
   - list
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - inferenceservices
   - inferenceservices/status
@@ -16496,7 +16496,7 @@ metadata:
   name: kubeflow-kserve-edit
 rules:
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - inferenceservices
   verbs:
@@ -16539,7 +16539,7 @@ metadata:
   name: kubeflow-kserve-view
 rules:
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - inferenceservices
   verbs:
@@ -17138,7 +17138,7 @@ metadata:
   labels:
     app: kserve
     app.kubernetes.io/name: kserve
-  name: inferenceservice.serving.kserve.io
+  name: inferenceservice.serving.kubeflow.org
 webhooks:
 - clientConfig:
     caBundle: Cg==
@@ -17150,7 +17150,7 @@ webhooks:
   name: inferenceservice.kserve-webhook-server.defaulter
   rules:
   - apiGroups:
-    - serving.kserve.io
+    - serving.kubeflow.org
     apiVersions:
     - v1alpha2
     operations:
@@ -17168,7 +17168,7 @@ webhooks:
   name: inferenceservice.kserve-webhook-server.v1beta1.defaulter
   rules:
   - apiGroups:
-    - serving.kserve.io
+    - serving.kubeflow.org
     apiVersions:
     - v1beta1
     operations:
@@ -17190,7 +17190,7 @@ webhooks:
       operator: DoesNotExist
   objectSelector:
     matchExpressions:
-    - key: serving.kserve.io/inferenceservice
+    - key: serving.kubeflow.org/inferenceservice
       operator: Exists
   rules:
   - apiGroups:
@@ -17211,7 +17211,7 @@ metadata:
   labels:
     app: kserve
     app.kubernetes.io/name: kserve
-  name: inferenceservice.serving.kserve.io
+  name: inferenceservice.serving.kubeflow.org
 webhooks:
 - clientConfig:
     caBundle: Cg==
@@ -17223,7 +17223,7 @@ webhooks:
   name: inferenceservice.kserve-webhook-server.validator
   rules:
   - apiGroups:
-    - serving.kserve.io
+    - serving.kubeflow.org
     apiVersions:
     - v1alpha2
     operations:
@@ -17241,7 +17241,7 @@ webhooks:
   name: inferenceservice.kserve-webhook-server.v1beta1.validator
   rules:
   - apiGroups:
-    - serving.kserve.io
+    - serving.kubeflow.org
     apiVersions:
     - v1beta1
     operations:
@@ -17258,7 +17258,7 @@ metadata:
   labels:
     app: kserve
     app.kubernetes.io/name: kserve
-  name: trainedmodel.serving.kserve.io
+  name: trainedmodel.serving.kubeflow.org
 webhooks:
 - clientConfig:
     caBundle: Cg==
@@ -17270,7 +17270,7 @@ webhooks:
   name: trainedmodel.kserve-webhook-server.validator
   rules:
   - apiGroups:
-    - serving.kserve.io
+    - serving.kubeflow.org
     apiVersions:
     - v1alpha1
     operations:

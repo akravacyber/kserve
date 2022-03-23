@@ -18,7 +18,7 @@ setup(
     name='paddleserver',
     version='0.7.0',
     author_email='zhangzhengyuan0604@gmail.com',
-    license='https://github.com/kserve/kserve/LICENSE',
+    license='https://github.com/akravacyber/kserve/LICENSE',
     description='Model Server implementation for Paddle. \
                  Not intended for use outside KServe Frameworks Images',
     long_description=open('README.md').read(),

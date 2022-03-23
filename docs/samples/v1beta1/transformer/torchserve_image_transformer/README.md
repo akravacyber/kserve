@@ -5,7 +5,7 @@ input tensors model server expects. In this example we demonstrate an example of
 
 ## Setup
 
-1. Your ~/.kube/config should point to a cluster with [KServe installed](https://github.com/kserve/kserve#installation).
+1. Your ~/.kube/config should point to a cluster with [KServe installed](https://github.com/akravacyber/kserve#installation).
 2. Your cluster's Istio Ingress gateway must be [network accessible](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/).
 
 ## Build Transformer image
@@ -74,7 +74,7 @@ By default `InferenceService` uses `TorchServe` to serve the PyTorch models and 
 The model repository contains a mnist model but you can store more than one models there. In the `Transformer` image you can create a transformer class for all the models in the repository if they can share the same transformer or maintain a map from model name to transformer classes so KServe knows to use the transformer for the corresponding model.  
 
 ```yaml
-apiVersion: serving.kserve.io/v1beta1
+apiVersion: serving.kubeflow.org/v1beta1
 kind: InferenceService
 metadata:
   name: torchserve-transformer
@@ -103,7 +103,7 @@ kubectl apply -f transformer.yaml
 Expected Output
 
 ```bash
-inferenceservice.serving.kserve.io/torchserve-transformer created
+inferenceservice.serving.kubeflow.org/torchserve-transformer created
 ```
 
 ## Run a prediction

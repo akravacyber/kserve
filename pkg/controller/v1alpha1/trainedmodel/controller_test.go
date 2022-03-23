@@ -20,10 +20,10 @@ import (
 	"context"
 	"time"
 
+	v1alpha1api "github.com/akravacyber/kserve/pkg/apis/serving/v1alpha1"
+	"github.com/akravacyber/kserve/pkg/apis/serving/v1beta1"
+	"github.com/akravacyber/kserve/pkg/constants"
 	"github.com/golang/protobuf/proto"
-	v1alpha1api "github.com/kserve/kserve/pkg/apis/serving/v1alpha1"
-	"github.com/kserve/kserve/pkg/apis/serving/v1beta1"
-	"github.com/kserve/kserve/pkg/constants"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	v1 "k8s.io/api/core/v1"

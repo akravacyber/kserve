@@ -34,7 +34,7 @@ api_version = constants.KSERVE_V1BETA1
 def test_raw_deployment_kserve():
     service_name = "raw-sklearn"
     annotations = dict()
-    annotations['serving.kserve.io/deploymentMode'] = 'RawDeployment'
+    annotations['serving.kubeflow.org/deploymentMode'] = 'RawDeployment'
     annotations['kubernetes.io/ingress.class'] = 'istio'
 
     predictor = V1beta1PredictorSpec(
@@ -69,7 +69,7 @@ def test_raw_deployment_kserve():
 def test_raw_deployment_runtime_kserve():
     service_name = "raw-sklearn-runtime"
     annotations = dict()
-    annotations['serving.kserve.io/deploymentMode'] = 'RawDeployment'
+    annotations['serving.kubeflow.org/deploymentMode'] = 'RawDeployment'
     annotations['kubernetes.io/ingress.class'] = 'istio'
 
     predictor = V1beta1PredictorSpec(

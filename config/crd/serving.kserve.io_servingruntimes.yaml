@@ -6,9 +6,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.4.0
   creationTimestamp: null
-  name: servingruntimes.serving.kserve.io
+  name: servingruntimes.serving.kubeflow.org
 spec:
-  group: serving.kserve.io
+  group: serving.kubeflow.org
   names:
     kind: ServingRuntime
     listKind: ServingRuntimeList

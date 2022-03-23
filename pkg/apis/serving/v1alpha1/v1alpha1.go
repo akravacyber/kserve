@@ -21,11 +21,11 @@ limitations under the License.
 // +k8s:deepcopy-gen=package,register
 // +k8s:conversion-gen=kserve/pkg/apis/serving
 // +k8s:defaulter-gen=TypeMeta
-// +groupName=serving.kserve.io
+// +groupName=serving.kubeflow.org
 package v1alpha1
 
 import (
-	"github.com/kserve/kserve/pkg/constants"
+	"github.com/akravacyber/kserve/pkg/constants"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"sigs.k8s.io/controller-runtime/pkg/scheme"
 )

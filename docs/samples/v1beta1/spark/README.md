@@ -2,7 +2,7 @@
 spark.mllib supports model export to Predictive Model Markup Language [PMML](https://en.wikipedia.org/wiki/Predictive_Model_Markup_Language).
 
 ## Setup
-1. Your ~/.kube/config should point to a cluster with [KServe installed](https://github.com/kserve/kserve#installation).
+1. Your ~/.kube/config should point to a cluster with [KServe installed](https://github.com/akravacyber/kserve#installation).
 2. Your cluster's Istio Ingress gateway must be [network accessible](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/).
 3. Install `pyspark` 3.0.x and `pyspark2pmml`
 ```bash
@@ -46,7 +46,7 @@ gsutil cp ./DecisionTreeIris.pmml gs://$BUCKET_NAME/sparkpmml/model.pmml
 ## Create the InferenceService with PMMLServer
 Create the `InferenceService` with `pmml` predictor and specify the `storageUri` with bucket location you uploaded to
 ```yaml
-apiVersion: "serving.kserve.io/v1beta1"
+apiVersion: "serving.kubeflow.org/v1beta1"
 kind: "InferenceService"
 metadata:
   name: "spark-pmml"
@@ -63,13 +63,13 @@ kubectl apply -f spark_pmml.yaml
 
 Expected Output
 ```
-$ inferenceservice.serving.kserve.io/spark-pmml created
+$ inferenceservice.serving.kubeflow.org/spark-pmml created
 ```
 
 Wait the `InferenceService` to be ready
 ```bash
 kubectl wait --for=condition=Ready inferenceservice spark-pmml
-inferenceservice.serving.kserve.io/spark-pmml condition met
+inferenceservice.serving.kubeflow.org/spark-pmml condition met
 ```
 
 ### Run a prediction

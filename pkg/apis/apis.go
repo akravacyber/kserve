@@ -21,8 +21,8 @@ limitations under the License.
 package apis
 
 import (
-	"github.com/kserve/kserve/pkg/apis/serving/v1alpha1"
-	"github.com/kserve/kserve/pkg/apis/serving/v1beta1"
+	"github.com/akravacyber/kserve/pkg/apis/serving/v1alpha1"
+	"github.com/akravacyber/kserve/pkg/apis/serving/v1beta1"
 	"k8s.io/apimachinery/pkg/runtime"
 )
 

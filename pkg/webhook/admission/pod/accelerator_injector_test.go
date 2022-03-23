@@ -18,8 +18,8 @@ package pod
 import (
 	"testing"
 
+	"github.com/akravacyber/kserve/pkg/constants"
 	"github.com/google/go-cmp/cmp"
-	"github.com/kserve/kserve/pkg/constants"
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

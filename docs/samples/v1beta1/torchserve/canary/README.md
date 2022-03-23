@@ -3,7 +3,7 @@
 ## Create InferenceService with default model
 
 ```yaml
-apiVersion: "serving.kserve.io/v1beta1"
+apiVersion: "serving.kubeflow.org/v1beta1"
 kind: "InferenceService"
 metadata:
   name: "torchserve"
@@ -22,7 +22,7 @@ kubectl apply -f torchserve.yaml
 Expected Output
 
 ```bash
-$inferenceservice.serving.kserve.io/torchserve created
+$inferenceservice.serving.kubeflow.org/torchserve created
 ```
 
 ## Create InferenceService with canary model
@@ -30,7 +30,7 @@ $inferenceservice.serving.kserve.io/torchserve created
 Change the `storageUri` for the new model version and apply the InferenceService
 
 ```yaml
-apiVersion: "serving.kserve.io/v1beta1"
+apiVersion: "serving.kubeflow.org/v1beta1"
 kind: "InferenceService"
 metadata:
   name: "torchserve"
@@ -50,7 +50,7 @@ kubectl apply -f canary.yaml
 You should now see two revisions created
 
 ```bash
-kubectl get revisions -l serving.kserve.io/inferenceservice=torchserve
+kubectl get revisions -l serving.kubeflow.org/inferenceservice=torchserve
 NAME                                 CONFIG NAME                    K8S SERVICE NAME                     GENERATION   READY   REASON
 torchserve-predictor-default-9lttm   torchserve-predictor-default   torchserve-predictor-default-9lttm   1            True
 torchserve-predictor-default-kxp96   torchserve-predictor-default   torchserve-predictor-default-kxp96   2            True
@@ -98,7 +98,7 @@ Expected Output
 ## Check the traffic split between the two revisions
 
 ```bash
-kubectl get pods -l serving.kserve.io/inferenceservice=torchserve
+kubectl get pods -l serving.kubeflow.org/inferenceservice=torchserve
 NAME                                                             READY   STATUS    RESTARTS   AGE
 torchserve-predictor-default-9lttm-deployment-7dd5cff4cb-tmmlc   2/2     Running   0          21m
 torchserve-predictor-default-kxp96-deployment-5d949864df-bmzfk   2/2     Running   0          20m

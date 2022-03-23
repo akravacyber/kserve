@@ -8,8 +8,8 @@ It is the internal model representation for the MetaGraph defined in the TensorF
 import (
 	"fmt"
 
+	pb "github.com/akravacyber/kserve/tools/tf2openapi/generated/protobuf"
 	"github.com/getkin/kin-openapi/openapi3"
-	pb "github.com/kserve/kserve/tools/tf2openapi/generated/protobuf"
 )
 
 type TFMetaGraph struct {

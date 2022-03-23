@@ -23,8 +23,8 @@ setup(
     name='aixserver',
     version='0.7.0',
     author_email='Andrew.Butler@ibm.com',
-    license='https://github.com/kserve/kserve/LICENSE',
-    url='https://github.com/kserve/kserve/python/aixserver',
+    license='https://github.com/akravacyber/kserve/LICENSE',
+    url='https://github.com/akravacyber/kserve/python/aixserver',
     description='Model Server implementation for AI eXplainability with LIME. \
                  Not intended for use outside KServe Frameworks Images',
     long_description=open('README.md').read(),

@@ -2,7 +2,7 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: MutatingWebhookConfiguration
 metadata:
-  name: inferenceservice.serving.kserve.io
+  name: inferenceservice.serving.kubeflow.org
   annotations:
     cert-manager.io/inject-ca-from: {{ .Release.Namespace }}/serving-cert
 webhooks:
@@ -18,7 +18,7 @@ webhooks:
     admissionReviewVersions: ["v1beta1"]
     rules:
       - apiGroups:
-          - serving.kserve.io
+          - serving.kubeflow.org
         apiVersions:
           - v1beta1
         operations:
@@ -38,7 +38,7 @@ webhooks:
     admissionReviewVersions: ["v1beta1"]
     objectSelector:
       matchExpressions:
-        - key: serving.kserve.io/inferenceservice
+        - key: serving.kubeflow.org/inferenceservice
           operator: Exists
     rules:
       - apiGroups:
@@ -55,7 +55,7 @@ webhooks:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
 metadata:
-  name: inferenceservice.serving.kserve.io
+  name: inferenceservice.serving.kubeflow.org
   annotations:
     cert-manager.io/inject-ca-from: {{ .Release.Namespace }}/serving-cert
 webhooks:
@@ -71,7 +71,7 @@ webhooks:
     admissionReviewVersions: ["v1beta1"]
     rules:
       - apiGroups:
-          - serving.kserve.io
+          - serving.kubeflow.org
         apiVersions:
           - v1beta1
         operations:
@@ -83,7 +83,7 @@ webhooks:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
 metadata:
-  name: trainedmodel.serving.kserve.io
+  name: trainedmodel.serving.kubeflow.org
   annotations:
     cert-manager.io/inject-ca-from: {{ .Release.Namespace }}/serving-cert
 webhooks:
@@ -99,7 +99,7 @@ webhooks:
     admissionReviewVersions: ["v1beta1"]
     rules:
       - apiGroups:
-          - serving.kserve.io
+          - serving.kubeflow.org
         apiVersions:
           - v1alpha1
         operations:

@@ -21,7 +21,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"github.com/kserve/kserve/pkg/constants"
+	"github.com/akravacyber/kserve/pkg/constants"
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/resource"
 	"sigs.k8s.io/controller-runtime/pkg/client"
@@ -39,7 +39,7 @@ var (
 	mutatorLogger = logf.Log.WithName("inferenceservice-v1beta1-mutating-webhook")
 )
 
-// +kubebuilder:webhook:path=/mutate-inferenceservices,mutating=true,failurePolicy=fail,groups=serving.kserve.io,resources=inferenceservices,verbs=create;update,versions=v1beta1,name=inferenceservice.kserve-webhook-server.defaulter
+// +kubebuilder:webhook:path=/mutate-inferenceservices,mutating=true,failurePolicy=fail,groups=serving.kubeflow.org,resources=inferenceservices,verbs=create;update,versions=v1beta1,name=inferenceservice.kserve-webhook-server.defaulter
 var _ webhook.Defaulter = &InferenceService{}
 
 func setResourceRequirementDefaults(requirements *v1.ResourceRequirements) {

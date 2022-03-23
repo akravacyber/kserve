@@ -3,7 +3,7 @@ When out of the box model server does not fit your need, you can build your own 
 following source to serving workflow to deploy your custom models to KServe.
 
 ## Setup
-1. Your ~/.kube/config should point to a cluster with [KServe installed](https://github.com/kserve/kserve#installation).
+1. Your ~/.kube/config should point to a cluster with [KServe installed](https://github.com/akravacyber/kserve#installation).
 2. Your cluster's Istio Ingress gateway must be [network accessible](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/).
 3. Install [pack CLI](https://buildpacks.io/docs/tools/pack/) to build your custom model server image.
 

@@ -4,7 +4,7 @@ In this example, we use a trained pytorch mnist model to predict handwritten dig
 
 ## Setup
 
-1. Your ~/.kube/config should point to a cluster with [KServe installed](https://github.com/kserve/kserve/#installation).
+1. Your ~/.kube/config should point to a cluster with [KServe installed](https://github.com/akravacyber/kserve/#installation).
 2. Your cluster's Istio Ingress gateway must be [network accessible](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/).
 
 ## Create the InferenceService
@@ -18,7 +18,7 @@ kubectl apply -f torchserve-v2.yaml
 Expected Output
 
 ```bash
-$inferenceservice.serving.kserve.io/torchserve-v2 created
+$inferenceservice.serving.kubeflow.org/torchserve-v2 created
 ```
 
 ## Inference with V2 REST Protocol

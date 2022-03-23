@@ -2,7 +2,7 @@
 
 ## Setup
 
-1. Your ~/.kube/config should point to a cluster with [KServe installed](https://github.com/kserve/kserve/#installation).
+1. Your ~/.kube/config should point to a cluster with [KServe installed](https://github.com/akravacyber/kserve/#installation).
 2. Your cluster's Istio Ingress gateway must be [network accessible](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/).
 
 ## Create the InferenceService
@@ -16,7 +16,7 @@ kubectl apply -f custom.yaml
 Expected Output
 
 ```
-inferenceservice.serving.kserve.io/custom-prebuilt-image
+inferenceservice.serving.kubeflow.org/custom-prebuilt-image
 ```
 
 ## Run a prediction

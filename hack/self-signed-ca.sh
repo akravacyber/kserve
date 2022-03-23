@@ -16,7 +16,7 @@ The following flags are optional.
        --service           Service name of webhook. Default: kserve-webhook-server-service
        --namespace         Namespace where webhook service and secret reside. Default: kserve
        --secret            Secret name for CA certificate and server certificate/key pair. Default: kserve-webhook-server-cert
-       --webhookName       Name for the mutating and validating webhook config. Default: inferenceservice.serving.kserve.io
+       --webhookName       Name for the mutating and validating webhook config. Default: inferenceservice.serving.kubeflow.org
        --webhookDeployment Statefulset name of the webhook controller. Default: kserve-controller-manager
 EOF
     exit 1
@@ -54,7 +54,7 @@ done
 [ -z ${secret} ] && secret=kserve-webhook-server-cert
 [ -z ${namespace} ] && namespace=kserve
 [ -z ${webhookDeployment} ] && webhookDeployment=kserve-controller-manager
-[ -z ${webhookName} ] && webhookName=inferenceservice.serving.kserve.io
+[ -z ${webhookName} ] && webhookName=inferenceservice.serving.kubeflow.org
 [ -z ${service} ] && service=kserve-webhook-server-service
 webhookDeploymentName=${webhookDeployment}-0
 webhookConfigName=${webhookName}
@@ -155,5 +155,5 @@ kubectl patch validatingwebhookconfiguration ${webhookConfigName} \
 echo "patching ca bundler for conversion webhook configuration.."
 conversionPatchString='[{"op": "replace", "path": "/spec/conversion/webhook/clientConfig/caBundle", "value":"{{CA_BUNDLE}}"}]'
 conversionPatchString=$(echo ${conversionPatchString} | sed "s|{{CA_BUNDLE}}|${caBundle}|g")
-kubectl patch CustomResourceDefinition inferenceservices.serving.kserve.io \
+kubectl patch CustomResourceDefinition inferenceservices.serving.kubeflow.org \
     --type='json' -p="${conversionPatchString}"

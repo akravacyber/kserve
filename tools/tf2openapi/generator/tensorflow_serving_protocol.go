@@ -3,8 +3,8 @@ package generator
 import (
 	"fmt"
 
+	"github.com/akravacyber/kserve/tools/tf2openapi/types"
 	"github.com/getkin/kin-openapi/openapi3"
-	"github.com/kserve/kserve/tools/tf2openapi/types"
 )
 
 const (

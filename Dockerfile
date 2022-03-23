@@ -2,7 +2,7 @@
 FROM golang:1.17 as builder
 
 # Copy in the go src
-WORKDIR /go/src/github.com/kserve/kserve
+WORKDIR /go/src/github.com/akravacyber/kserve
 COPY go.mod  go.mod
 COPY go.sum  go.sum
 
@@ -23,5 +23,5 @@ RUN if [ "$(uname -m)" = "ppc64le" ]; then \
 FROM gcr.io/distroless/static:nonroot
 WORKDIR /
 COPY third_party/ third_party/
-COPY --from=builder /go/src/github.com/kserve/kserve/manager .
+COPY --from=builder /go/src/github.com/akravacyber/kserve/manager .
 ENTRYPOINT ["/manager"]

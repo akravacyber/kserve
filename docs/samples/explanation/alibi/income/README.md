@@ -9,7 +9,7 @@ We can create a InferenceService with a trained sklearn predictor for this datas
 The InferenceService is shown below:
 
 ```yaml
-apiVersion: "serving.kserve.io/v1beta1"
+apiVersion: "serving.kubeflow.org/v1beta1"
 kind: "InferenceService"
 metadata:
   name: "income"

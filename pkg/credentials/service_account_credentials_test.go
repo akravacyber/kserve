@@ -20,11 +20,11 @@ import (
 	"context"
 	"testing"
 
-	"github.com/kserve/kserve/pkg/credentials/azure"
+	"github.com/akravacyber/kserve/pkg/credentials/azure"
 
+	"github.com/akravacyber/kserve/pkg/credentials/gcs"
+	"github.com/akravacyber/kserve/pkg/credentials/s3"
 	"github.com/google/go-cmp/cmp"
-	"github.com/kserve/kserve/pkg/credentials/gcs"
-	"github.com/kserve/kserve/pkg/credentials/s3"
 	"github.com/onsi/gomega"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

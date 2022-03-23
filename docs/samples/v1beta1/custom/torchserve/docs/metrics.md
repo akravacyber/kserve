@@ -4,7 +4,7 @@ This adds prometheus and grafana to the cluster with some default metrics.
 
 ## Setup
 
-1. Your ~/.kube/config should point to a cluster with [KServe installed](https://github.com/kserve/kserve#installation).
+1. Your ~/.kube/config should point to a cluster with [KServe installed](https://github.com/akravacyber/kserve#installation).
 2. Your cluster's Istio Ingress gateway must be [network accessible](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/).
 
 ## Enable request metrics
@@ -70,7 +70,7 @@ metrics_format=prometheus
 Enable prometheus scraping by adding annotations to deployment yaml. Here our torchserve's metrics port is 8082.
 
 ```yaml
-apiVersion: "serving.kserve.io/v1beta1"
+apiVersion: "serving.kubeflow.org/v1beta1"
 kind: "InferenceService"
 metadata:
   name: torchserve-custom
@@ -95,7 +95,7 @@ kubectl apply -f torchserve-custom.yaml
 Expected Output
 
 ```bash
-$inferenceservice.serving.kserve.io/torchserve-custom created
+$inferenceservice.serving.kubeflow.org/torchserve-custom created
 ```
 
 ## Run a prediction

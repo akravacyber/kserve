@@ -72,7 +72,7 @@ def predict_str(service_name, input_json, protocol_version="v1",
         namespace=KSERVE_TEST_NAMESPACE,
         version=version,
     )
-    # temporary sleep until this is fixed https://github.com/kserve/kserve/issues/604
+    # temporary sleep until this is fixed https://github.com/akravacyber/kserve/issues/604
     time.sleep(10)
     cluster_ip = get_cluster_ip()
     host = urlparse(isvc["status"]["url"]).netloc
@@ -116,7 +116,7 @@ def explain_response(service_name, input_json):
         namespace=KSERVE_TEST_NAMESPACE,
         version=constants.KSERVE_V1BETA1_VERSION,
     )
-    # temporary sleep until this is fixed https://github.com/kserve/kserve/issues/604
+    # temporary sleep until this is fixed https://github.com/akravacyber/kserve/issues/604
     time.sleep(10)
     cluster_ip = get_cluster_ip()
     host = urlparse(isvc["status"]["url"]).netloc
@@ -145,7 +145,7 @@ def explain_response(service_name, input_json):
                 ))
             pods = kfs_client.core_api.list_namespaced_pod(
                 KSERVE_TEST_NAMESPACE,
-                label_selector="serving.kserve.io/inferenceservice={}".format(
+                label_selector="serving.kubeflow.org/inferenceservice={}".format(
                     service_name),
             )
             for pod in pods.items:

@@ -24,8 +24,8 @@ setup(
     name='sklearnserver',
     version='0.7.0',
     author_email='singhan@us.ibm.com',
-    license='https://github.com/kserve/kserve/LICENSE',
-    url='https://github.com/kserve/kserve/python/sklearnserver',
+    license='https://github.com/akravacyber/kserve/LICENSE',
+    url='https://github.com/akravacyber/kserve/python/sklearnserver',
     description='Model Server implementation for scikit-learn. \
                  Not intended for use outside KServe Frameworks Images',
     long_description=open('README.md').read(),

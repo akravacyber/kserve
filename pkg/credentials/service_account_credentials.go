@@ -21,12 +21,12 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/kserve/kserve/pkg/credentials/https"
+	"github.com/akravacyber/kserve/pkg/credentials/https"
 
-	"github.com/kserve/kserve/pkg/credentials/azure"
-	"github.com/kserve/kserve/pkg/credentials/gcs"
-	"github.com/kserve/kserve/pkg/credentials/s3"
-	"github.com/kserve/kserve/pkg/utils"
+	"github.com/akravacyber/kserve/pkg/credentials/azure"
+	"github.com/akravacyber/kserve/pkg/credentials/gcs"
+	"github.com/akravacyber/kserve/pkg/credentials/s3"
+	"github.com/akravacyber/kserve/pkg/utils"
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/types"
 	"sigs.k8s.io/controller-runtime/pkg/client"

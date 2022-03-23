@@ -193,7 +193,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - clusterservingruntimes
   - clusterservingruntimes/finalizers
@@ -206,7 +206,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - clusterservingruntimes/status
   verbs:
@@ -214,7 +214,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - inferenceservices
   - inferenceservices/finalizers
@@ -227,7 +227,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - inferenceservices/status
   verbs:
@@ -235,7 +235,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - servingruntimes
   - servingruntimes/finalizers
@@ -248,7 +248,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - servingruntimes/status
   verbs:
@@ -256,7 +256,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - trainedmodels
   verbs:
@@ -268,7 +268,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - serving.kserve.io
+  - serving.kubeflow.org
   resources:
   - trainedmodels/status
   verbs:
@@ -367,7 +367,7 @@ rules:
       - update
       - watch
   - apiGroups:
-      - serving.kserve.io
+      - serving.kubeflow.org
     resources:
       - inferenceservices
     verbs:
@@ -379,7 +379,7 @@ rules:
       - update
       - watch
   - apiGroups:
-      - serving.kserve.io
+      - serving.kubeflow.org
     resources:
       - inferenceservices/finalizers
     verbs:
@@ -387,7 +387,7 @@ rules:
       - patch
       - update
   - apiGroups:
-      - serving.kserve.io
+      - serving.kubeflow.org
     resources:
       - inferenceservices/status
     verbs:
@@ -395,7 +395,7 @@ rules:
       - patch
       - update
   - apiGroups:
-      - serving.kserve.io
+      - serving.kubeflow.org
     resources:
       - predictors
     verbs:
@@ -407,7 +407,7 @@ rules:
       - update
       - watch
   - apiGroups:
-      - serving.kserve.io
+      - serving.kubeflow.org
     resources:
       - predictors/finalizers
     verbs:
@@ -415,7 +415,7 @@ rules:
       - patch
       - update
   - apiGroups:
-      - serving.kserve.io
+      - serving.kubeflow.org
     resources:
       - predictors/status
     verbs:
@@ -423,7 +423,7 @@ rules:
       - patch
       - update
   - apiGroups:
-      - serving.kserve.io
+      - serving.kubeflow.org
     resources:
       - servingruntimes
       - servingruntimes/finalizers
@@ -436,7 +436,7 @@ rules:
       - update
       - watch
   - apiGroups:
-      - serving.kserve.io
+      - serving.kubeflow.org
     resources:
       - servingruntimes/status
     verbs:

@@ -8,12 +8,12 @@ The following prerequisites will be met if you follow [Full Kubeflow on Google C
 1. Your ~/.kube/config should point to a cluster with [KFServing installed](https://github.com/kubeflow/kfserving/#install-kfserving).
 2. Your gcloud config is initialised to the project containing the k8s cluster and has a service-account that can download IAP key file.
 3. You are using KNative serving v0.22.0+
-4. You are using KFServing v0.3+ and v0.7-. (KFserving has renamed to KServe in v0.7, and will use `serving.kserve.io` API guide)
+4. You are using KFServing v0.3+ and v0.7-. (KFserving has renamed to KServe in v0.7, and will use `serving.kubeflow.org` API guide)
 
 Once IAP is enabled and configured, your k8s cluster should have a GCP external http loadbalancer protected by IAP.
 
 ### Overview
-This example shows how the [sklearn iris sample](https://github.com/kserve/kserve/tree/master/docs/samples/v1beta1/sklearn) can be adapted to support GCP IAP.  We will use a pre-trained model that is hosted on a public gcs bucket.  The model predicts a binary classification of iris specie using 4 numerical features.
+This example shows how the [sklearn iris sample](https://github.com/akravacyber/kserve/tree/master/docs/samples/v1beta1/sklearn) can be adapted to support GCP IAP.  We will use a pre-trained model that is hosted on a public gcs bucket.  The model predicts a binary classification of iris specie using 4 numerical features.
 
 In this example we will:
  1. **Enable GCP IAP**

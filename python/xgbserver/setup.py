@@ -26,7 +26,7 @@ setup(
     version='0.7.0',
     author_email='ellisbigelow@google.com',
     license='../../LICENSE.txt',
-    url='https://github.com/kserve/kserve/python/xgbserver',
+    url='https://github.com/akravacyber/kserve/python/xgbserver',
     description='Model Server implementation for XGBoost. \
                  Not intended for use outside KServe Frameworks Images',
     long_description=open('README.md').read(),

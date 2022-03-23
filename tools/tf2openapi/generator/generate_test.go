@@ -15,9 +15,9 @@ import (
 	"github.com/golang/protobuf/proto"
 	"github.com/onsi/gomega"
 
-	"github.com/kserve/kserve/tools/tf2openapi/generated/framework"
-	pb "github.com/kserve/kserve/tools/tf2openapi/generated/protobuf"
-	"github.com/kserve/kserve/tools/tf2openapi/types"
+	"github.com/akravacyber/kserve/tools/tf2openapi/generated/framework"
+	pb "github.com/akravacyber/kserve/tools/tf2openapi/generated/protobuf"
+	"github.com/akravacyber/kserve/tools/tf2openapi/types"
 )
 
 func TestGeneratorBuilderSpecifiedFields(t *testing.T) {

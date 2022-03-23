@@ -7,9 +7,9 @@ import (
 	"github.com/getkin/kin-openapi/openapi3"
 	"github.com/onsi/gomega"
 
-	"github.com/kserve/kserve/pkg/utils"
-	"github.com/kserve/kserve/tools/tf2openapi/generated/framework"
-	pb "github.com/kserve/kserve/tools/tf2openapi/generated/protobuf"
+	"github.com/akravacyber/kserve/pkg/utils"
+	"github.com/akravacyber/kserve/tools/tf2openapi/generated/framework"
+	pb "github.com/akravacyber/kserve/tools/tf2openapi/generated/protobuf"
 )
 
 /* Expected values */

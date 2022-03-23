@@ -9,9 +9,9 @@ import (
 	"fmt"
 	"sort"
 
+	pb "github.com/akravacyber/kserve/tools/tf2openapi/generated/protobuf"
 	"github.com/getkin/kin-openapi/openapi3"
 	"github.com/google/go-cmp/cmp"
-	pb "github.com/kserve/kserve/tools/tf2openapi/generated/protobuf"
 )
 
 type TFSavedModel struct {
